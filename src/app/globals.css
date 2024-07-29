@@ -2,32 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer utilities{
+  .app-input {
+    @apply bg-neutral-100 w-full border outline-primary text-dark-text py-3 pe-3 rounded-md read-only:opacity-70 read-only:[&not[type="file"]]:pointer-events-none;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .app-select {
+    @apply w-full border outline-primary text-dark-text py-3 pe-3 rounded-md  bg-neutral-100;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.heading {
+  @apply font-semibold text-3xl md:text-4xl
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.btn {
+  @apply inline-flex gap-1 border items-center justify-center rounded-[40px] shadow-sm transition duration-150 ease-in-out font-[500] font-semibold text-lg
+}
+.btn-primary {
+  @apply bg-primary border-primary btn text-light-text hover:bg-primary-dark text-sm font-[500] py-3 inline-flex gap-1;
+}
+.app-container {
+  @apply px-5 sm:px-8 md:px-9 lg:px-14 xl:px-20 2xl:px-28;
 }
