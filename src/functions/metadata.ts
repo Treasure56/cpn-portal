@@ -20,7 +20,7 @@ export type MetadataProps = {
  * @return {Metadata} The generated metadata.
  */
 export function createMetadata({ title, description, img, path }: MetadataProps): Metadata {
-    const keywords = ["Zaye properties", "rentals", "Homes", "buildings", "real estate UK", "agents", ...title.split(' '), ...description.split(' ')];
+    const keywords = ["Center point Network", "rentals", "Homes", "buildings", "real estate UK", "agents", ...title.split(' '), ...description.split(' ')];
     const buildImg = img ? (img.startsWith('/') ? HOST+img : img) : '/images/hero.png';
 
     return {
@@ -28,8 +28,8 @@ export function createMetadata({ title, description, img, path }: MetadataProps)
         description,
         metadataBase: new URL(HOST),
         icons: ["/images/icon.png"],
-        appleWebApp: { capable: true, title: "Zaye Properties", startupImage: ["/images/hero.png"] },
-        applicationName: "Zaye Properties",
+        appleWebApp: { capable: true, title: "Center point Network", startupImage: ["/images/hero.png"] },
+        applicationName: "Center point Network",
         keywords: keywords,
         // manifest: "/files/manifest.json",
         twitter: { title, description, images: [buildImg] },

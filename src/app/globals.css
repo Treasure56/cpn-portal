@@ -10,16 +10,27 @@
   .app-select {
     @apply w-full border outline-primary text-dark-text py-3 pe-3 rounded-md  bg-neutral-100;
   }
-}
-.heading {
-  @apply font-semibold text-3xl md:text-4xl
-}
-.btn {
-  @apply inline-flex gap-1 border items-center justify-center rounded-[40px] shadow-sm transition duration-150 ease-in-out font-[500] font-semibold text-lg
+  .heading {
+    @apply font-semibold text-xl md:text-2xl
+  }
+  .btn {
+    @apply inline-flex gap-1 border items-center justify-center rounded-md shadow-sm transition duration-150 ease-in-out font-[500]
 }
 .btn-primary {
   @apply bg-primary border-primary btn text-light-text hover:bg-primary-dark text-sm font-[500] py-3 inline-flex gap-1;
 }
+.btn-dark {
+  @apply bg-neutral-800 border-neutral-800 btn text-light-text hover:bg-black text-sm py-3 inline-flex gap-1;
+}
+
 .app-container {
   @apply px-5 sm:px-8 md:px-9 lg:px-14 xl:px-20 2xl:px-28;
+}
+
+.admin-side-link {
+  @apply flex gap-3 font-semibold items-center text-neutral-700 hover:text-primary p-2 rounded-md hover:bg-neutral-100 transition-colors duration-300
+}
+.admin-side-link-logout {
+  @apply !text-red-800 hover:!text-red-700 p-2 rounded-md hover:!bg-red-50
+}
 }

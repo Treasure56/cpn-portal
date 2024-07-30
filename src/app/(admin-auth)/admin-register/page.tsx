@@ -27,12 +27,12 @@ export default function Page() {
         </div>
         <FormButton className="btn-primary">Login</FormButton>
         <div className=" flex gap-2">
-          <p>Don&apos;t have an account?</p>
+          <p>already have an account</p>
           <Link
-            href={paths.adminRegister}
+            href={paths.adminLogin}
             className="text-primary font-semibold"
           >
-            Sign Up
+            Login
           </Link>
         </div>
       </form>
@@ -41,6 +41,13 @@ export default function Page() {
 }
 
 const loginFields: AppInputProps[] = [
+    {
+        name: "fullname",
+        title: "Fullname",
+        type: "fullname",
+        placeholder: "Enter your fullname",
+      },
+    
   {
     name: "email",
     title: "Email",
@@ -52,5 +59,17 @@ const loginFields: AppInputProps[] = [
     title: "Password",
     type: "password",
     placeholder: "Enter your Password",
+  },
+  {
+    name: " confirmpassword",
+    title: "confirm Password",
+    type: "password",
+    placeholder: "Confirm your Password",
+  },
+  {
+    name: " accesscode",
+    title: "Access code",
+    type: "number",
+    placeholder: "Enter access code",
   },
 ];
