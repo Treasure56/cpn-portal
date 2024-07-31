@@ -1,7 +1,7 @@
 import { centerDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 
-export default function AdminTableRow() {
+export default function Table() {
     return (
         <div>
             <table className="min-w-[1000px] w-full rounded-md overflow-hidden app-table">

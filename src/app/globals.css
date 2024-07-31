@@ -33,4 +33,10 @@
 .admin-side-link-logout {
   @apply !text-red-800 hover:!text-red-700 p-2 rounded-md hover:!bg-red-50
 }
+.btn-edit{
+  @apply border border-neutral-500 px-2 py-1 text-neutral rounded-md flex items-center justify-center
+}
+.btn-delete{
+  @apply  border border-primary px-2 py-1 text-primary rounded-md flex items-center justify-center
+}
 }

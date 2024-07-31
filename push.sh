@@ -2,7 +2,7 @@ git add .
 
 ECHO "________________Added________________"
 
-git commit -m "finished admin overview"
+git commit -m "finished admin  managers page ui"
 
 ECHO "________________Committed________________"
 

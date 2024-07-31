@@ -12,6 +12,7 @@ export type Admin = {
     createdAt: string;
     full_name: string;
     email: string;
+    phone: string;
     password: string;
     center_id: number;
   };

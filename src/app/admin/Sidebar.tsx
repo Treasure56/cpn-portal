@@ -68,6 +68,11 @@ const links: SidebarLinkProps[] = [
         href: paths.admin,
     },
     {
+        title: "Managers",
+        icon: <GrUserManager />,
+        href: paths.adminManagers,
+    },
+    {
         title: "Staff",
         icon: <PiUsersFourBold />,
         href: paths.adminStaff,
@@ -76,11 +81,6 @@ const links: SidebarLinkProps[] = [
         title: "Students",
         icon: <PiStudent />,
         href: paths.adminStudents,
-    },
-    {
-        title: "Managers",
-        icon: <GrUserManager />,
-        href: paths.adminManagers,
     },
     {
         title: "Courses",

@@ -1,13 +1,10 @@
 import { PageTitle } from "@/components/admin";
-import AdminOverViewCard from "@/components/admin/AdminOverViewCard";
-import { FaUserAlt } from "react-icons/fa";
 import AdminTotalStaff from "./AdminTotalStaff";
 import AdminTotalManagers from "./AdminTotalManagers";
 import AdminTotalStudents from "./AdminTotalStudents";
 import AdminTotalCourses from "./AdminTotalCourses";
-import AdminTable from "../Table";
-import Link from "next/link";
-import { paths } from "@/utils";
+import Table from "./Table";
+import CreateCenter from "./CreateCenter";
 
 export default function Page() {
     return (
@@ -25,9 +22,11 @@ export default function Page() {
            <div className="flex flex-col">
             <div className="py-2 flex justify-between items-center">
                 <h3 className=" text-lg font-[500]">Centers</h3>
-                <Link href={`${paths.admin}?new=center`} className="btn-dark !py-1.5 !px-5 !font-normal !text-sm">Add Center +</Link>
+                <CreateCenter>
+                    <button className="btn-dark !py-1.5 !px-5 !font-normal !text-sm">Add Center +</button>
+                </CreateCenter>
             </div>
-           <AdminTable />
+           <Table />
            </div>
         </section>
     );
