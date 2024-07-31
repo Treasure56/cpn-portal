@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities{
+@layer utilities {
   .app-input {
     @apply bg-neutral-100 w-full border outline-primary text-dark-text py-3 pe-3 rounded-md read-only:opacity-70 read-only:[&not[type="file"]]:pointer-events-none;
   }
 
   .app-select {
-    @apply w-full border outline-primary text-dark-text py-3 pe-3 rounded-md  bg-neutral-100;
+    @apply w-full border outline-primary text-dark-text py-3 pe-3 rounded-md bg-neutral-100;
   }
+
   .heading {
-    @apply font-semibold text-xl md:text-2xl
+    @apply font-[500] text-xl md:text-2xl
   }
+
   .btn {
     @apply inline-flex gap-1 border items-center justify-center rounded-md shadow-sm transition duration-150 ease-in-out font-[500]
-}
-.btn-primary {
-  @apply bg-primary border-primary btn text-light-text hover:bg-primary-dark text-sm font-[500] py-3 inline-flex gap-1;
-}
-.btn-dark {
-  @apply bg-neutral-800 border-neutral-800 btn text-light-text hover:bg-black text-sm py-3 inline-flex gap-1;
-}
+  }
 
-.app-container {
-  @apply px-5 sm:px-8 md:px-9 lg:px-14 xl:px-20 2xl:px-28;
-}
+  .btn-primary {
+    @apply bg-primary border-primary btn text-light-text hover:bg-primary-dark text-sm font-[500] py-3 inline-flex gap-1;
+  }
 
-.admin-side-link {
-  @apply flex gap-3 font-semibold items-center text-neutral-700 hover:text-primary p-2 rounded-md hover:bg-neutral-100 transition-colors duration-300
-}
-.admin-side-link-logout {
-  @apply !text-red-800 hover:!text-red-700 p-2 rounded-md hover:!bg-red-50
-}
-.btn-edit{
-  @apply border border-neutral-500 px-2 py-1 text-neutral rounded-md flex items-center justify-center
-}
-.btn-delete{
-  @apply  border border-primary px-2 py-1 text-primary rounded-md flex items-center justify-center
-}
+  .btn-dark {
+    @apply bg-neutral-800 border-neutral-800 btn text-light-text hover:bg-black text-sm py-3 inline-flex gap-1;
+  }
+
+  .app-container {
+    @apply px-5 sm:px-8 md:px-9 lg:px-14 xl:px-20 2xl:px-28;
+  }
+
+  .admin-side-link {
+    @apply flex gap-3 font-[500] items-center text-neutral-700 hover:text-primary p-2 rounded-md hover:bg-neutral-100 transition-colors duration-300
+  }
+
+  .admin-side-link-logout {
+    @apply !text-red-800 !text-red-700 p-2 rounded-md !bg-red-50
+  }
+
+  .btn-edit {
+    @apply border border-neutral-500 px-2 py-1 text-neutral rounded-md flex items-center justify-center
+  }
+
+  .btn-delete {
+    @apply border border-primary px-2 py-1 text-primary rounded-md flex items-center justify-center
+  }
+  table {
+    @apply shadow-lg
+  }
+  table td:nth-of-type(1){
+    @apply pl-2 py-3
+  }
+  table tr:last-of-type{
+    border: none !important;
+  }
 }
