@@ -3,31 +3,42 @@
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
-import { Manager } from "@/types";
+import { Manager, Staff, Students } from "@/types";
 import { Dialog } from "@radix-ui/themes";
 import { IoClose } from "react-icons/io5";
 
-export default function EditManager({children, manager}:{children: React.ReactNode, manager:Manager}) {
+export default function EditModall({children, students}:{children: React.ReactNode, students:Students}) {
 
     const fields:AppInputProps[] = [
         {
             name: "full_name",
             title: "Full Name",
             placeholder: "Enter Full Name", 
-            value: manager.full_name 
+            value: students.full_name 
         },
         {
             name: "email",
             title: "Email",
             placeholder: "Enter Email",
-            value: manager.email
-
+            value: students.email
         },
         {
             name: "phone",
             title: "Phone Number", 
             placeholder: "Enter Phone Number",
-            value: manager.phone
+            value: students.phone
+        },
+        {
+            name: "student_id",
+            title: "Student ID", 
+            placeholder: "Enter Student ID",
+            value: students.student_id
+        },
+        {
+            name: "reg_date",
+            title: "Registration Date", 
+            placeholder: "Enter Registration Date",
+            value: students.reg_date
         }
         ]
  
@@ -37,7 +48,7 @@ export default function EditManager({children, manager}:{children: React.ReactNo
             <Dialog.Content>
                <div> 
                 <div className="flex justify-between pb-6">
-                    <h4 className="font-semibold">Edit Manager</h4>
+                    <h4 className="font-semibold">Edit Student</h4>
                     <Dialog.Close>
                         <IoClose />
                     </Dialog.Close>

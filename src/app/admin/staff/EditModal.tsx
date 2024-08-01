@@ -3,31 +3,31 @@
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
-import { Manager } from "@/types";
+import { Manager, Staff } from "@/types";
 import { Dialog } from "@radix-ui/themes";
 import { IoClose } from "react-icons/io5";
 
-export default function EditManager({children, manager}:{children: React.ReactNode, manager:Manager}) {
+export default function EditModall({children, staff}:{children: React.ReactNode, staff:Staff}) {
 
     const fields:AppInputProps[] = [
         {
             name: "full_name",
             title: "Full Name",
             placeholder: "Enter Full Name", 
-            value: manager.full_name 
+            value: staff.full_name 
         },
         {
             name: "email",
             title: "Email",
             placeholder: "Enter Email",
-            value: manager.email
+            value: staff.email
 
         },
         {
             name: "phone",
             title: "Phone Number", 
             placeholder: "Enter Phone Number",
-            value: manager.phone
+            value: staff.phone
         }
         ]
  
@@ -37,7 +37,7 @@ export default function EditManager({children, manager}:{children: React.ReactNo
             <Dialog.Content>
                <div> 
                 <div className="flex justify-between pb-6">
-                    <h4 className="font-semibold">Edit Manager</h4>
+                    <h4 className="font-semibold">Edit Staff</h4>
                     <Dialog.Close>
                         <IoClose />
                     </Dialog.Close>

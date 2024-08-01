@@ -22,7 +22,7 @@ export type Admin = {
     createdAt: string;
     full_name: string;
     email: string;
-    phone: number;
+    phone: string;
     center_id: number;
     salary: number;
     courses: number;
@@ -59,11 +59,12 @@ export type Admin = {
     createdAt: string;
     full_name: string;
     email: string;
-    phone: number;
+    phone: string;
     center_id: number;
     student_id: string;
     reg_date: string;
     course_id: number;
+    birth_date: string;
   };
   
   

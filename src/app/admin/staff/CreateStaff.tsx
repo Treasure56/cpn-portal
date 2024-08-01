@@ -3,33 +3,11 @@
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
-import { Manager } from "@/types";
 import { Dialog } from "@radix-ui/themes";
+import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 
-export default function EditManager({children, manager}:{children: React.ReactNode, manager:Manager}) {
-
-    const fields:AppInputProps[] = [
-        {
-            name: "full_name",
-            title: "Full Name",
-            placeholder: "Enter Full Name", 
-            value: manager.full_name 
-        },
-        {
-            name: "email",
-            title: "Email",
-            placeholder: "Enter Email",
-            value: manager.email
-
-        },
-        {
-            name: "phone",
-            title: "Phone Number", 
-            placeholder: "Enter Phone Number",
-            value: manager.phone
-        }
-        ]
+export default function CreateStaff({children}:{children: React.ReactNode}) {
  
     return (
         <Dialog.Root>
@@ -37,7 +15,7 @@ export default function EditManager({children, manager}:{children: React.ReactNo
             <Dialog.Content>
                <div> 
                 <div className="flex justify-between pb-6">
-                    <h4 className="font-semibold">Edit Manager</h4>
+                    <h4 className="font-semibold">Create New Staff</h4>
                     <Dialog.Close>
                         <IoClose />
                     </Dialog.Close>
@@ -47,11 +25,10 @@ export default function EditManager({children, manager}:{children: React.ReactNo
                     <AppSelect name="center_id" title="Center" options={[]} />
                 {
                     fields.map((item) => {
-
                         return <AppInput key={item.name} {...item} />
                     })
                 }
-                <FormButton className="btn-primary">Update</FormButton>
+                <FormButton className="btn-primary">Create</FormButton>
                 </form>
                </div>
             </Dialog.Content>
@@ -61,3 +38,20 @@ export default function EditManager({children, manager}:{children: React.ReactNo
 
 
 
+const fields:AppInputProps[] = [
+{
+    name: "full_name",
+    title: "Full Name",
+    placeholder: "Enter Full Name",   
+},
+{
+    name: "email",
+    title: "Email",
+    placeholder: "Enter Email",
+},
+{
+    name: "phone",
+    title: "Phone Number", 
+    placeholder: "Enter Phone Number",
+}
+]
