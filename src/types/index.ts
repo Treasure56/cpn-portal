@@ -50,8 +50,8 @@ export type Admin = {
     _id: string;
     createdAt: string;
     title: string;
-    duration: number;
-    amount: number;
+    duration: string;
+    amount: string;
   };
 
   export type Students = {
