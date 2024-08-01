@@ -23,6 +23,7 @@ export const paths = {
     managerStudents: "/manager/students",
     managerPayments: "/manager/payments",
     managerChangePassword: "/manager/change-password",
+    managerCourses: "/manager/courses",
 
 
 
