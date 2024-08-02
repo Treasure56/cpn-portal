@@ -3,22 +3,22 @@
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
-import { Dialog } from "@radix-ui/themes";
+import { AlertDialog } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 
 export default function CreateStaff({children}:{children: React.ReactNode}) {
  
     return (
-        <Dialog.Root>
-            <Dialog.Trigger>{children}</Dialog.Trigger>
-            <Dialog.Content>
+        <AlertDialog.Root>
+            <AlertDialog.Trigger>{children}</AlertDialog.Trigger>
+            <AlertDialog.Content>
                <div> 
                 <div className="flex justify-between pb-6">
                     <h4 className="font-semibold">Create New Staff</h4>
-                    <Dialog.Close>
+                    <AlertDialog.Cancel>
                         <IoClose />
-                    </Dialog.Close>
+                    </AlertDialog.Cancel>
                 </div>
                 <form className="flex flex-col gap-4">
                     <FormMessage res={{}} />
@@ -31,8 +31,8 @@ export default function CreateStaff({children}:{children: React.ReactNode}) {
                 <FormButton className="btn-primary">Create</FormButton>
                 </form>
                </div>
-            </Dialog.Content>
-        </Dialog.Root>
+            </AlertDialog.Content>
+        </AlertDialog.Root>
     );
 }
 

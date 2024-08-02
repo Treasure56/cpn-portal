@@ -14,10 +14,16 @@ export function capitalizeFirst(s: string) {
     return s.split('').map((v, i) => i == 0 ? v.toUpperCase() : v).join('');
 }
 
-export function formatNumber(num: number, asMoney = false): string {
+export function formatNumber(num: number | string, asMoney = false): string {
     const _num = num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-    if (asMoney) return `£${_num}`
+    if (asMoney) return `₦${_num}`
     return _num;
+}
+
+export function formatDuration(duration: number | string): string {
+    const _duration = Number(duration)
+    if(_duration < 12) return `${_duration} months`
+    else return `${_duration / 12} years`
 }
 
 export function isVideo(url: string) {

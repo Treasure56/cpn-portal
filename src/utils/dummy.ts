@@ -54,7 +54,7 @@ export const courseDummy = {
   createdAt: "2022-01-01T00:00:00.000Z",
   title: "ADSE",
   amount: "10000",
-  duration: "3 months",
+  duration: "3",
 };
 
 export const courseDummys = [courseDummy, courseDummy, courseDummy];

@@ -4,7 +4,7 @@ import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
 import { Manager } from "@/types";
-import { Dialog } from "@radix-ui/themes";
+import { AlertDialog } from "@radix-ui/themes";
 import { IoClose } from "react-icons/io5";
 
 export default function EditManager({children, manager}:{children: React.ReactNode, manager:Manager}) {
@@ -32,15 +32,15 @@ export default function EditManager({children, manager}:{children: React.ReactNo
         ]
  
     return (
-        <Dialog.Root>
-            <Dialog.Trigger>{children}</Dialog.Trigger>
-            <Dialog.Content>
+        <AlertDialog.Root>
+            <AlertDialog.Trigger>{children}</AlertDialog.Trigger>
+            <AlertDialog.Content>
                <div> 
                 <div className="flex justify-between pb-6">
                     <h4 className="font-semibold">Edit Manager</h4>
-                    <Dialog.Close>
+                    <AlertDialog.Cancel>
                         <IoClose />
-                    </Dialog.Close>
+                    </AlertDialog.Cancel>
                 </div>
                 <form className="flex flex-col gap-4">
                     <FormMessage res={{}} />
@@ -54,8 +54,8 @@ export default function EditManager({children, manager}:{children: React.ReactNo
                 <FormButton className="btn-primary">Update</FormButton>
                 </form>
                </div>
-            </Dialog.Content>
-        </Dialog.Root>
+            </AlertDialog.Content>
+        </AlertDialog.Root>
     );
 }
 

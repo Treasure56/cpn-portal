@@ -3,6 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import EditManager from "./EditModal";
 import DeleteManager from "./DeleteModal";
+import { formatNumber } from "@/functions/helpers";
 
 export type TableProps = {
   _id: string;
@@ -16,7 +17,7 @@ export default function TableRow({_id, email, center_id, full_name, phone, cours
       </td>
       <td>{phone}</td>
       <td>{center_id}</td>
-      <td>{salary}</td>
+      <td>{formatNumber(salary, true)}</td>
       <td>{courses}</td>
       <td><div className="flex gap-2 justify-end">
         <EditManager staff={{_id, email, center_id, full_name, phone, courses, salary, ...props }}><button className="btn-edit"><FaEdit /></button></EditManager>

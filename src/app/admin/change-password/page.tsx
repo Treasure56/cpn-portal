@@ -6,7 +6,7 @@ import AppInput, { AppInputProps } from "@/components/form/AppInput";
 export default function Page() {
   
   return (
-    <div className=" py-8">
+    <div className=" py-8 max-w-[400px] mx-auto">
       <h2 className=" heading">Change Password</h2>
       <form
         className="flex flex-col gap-3 py-3"
@@ -34,5 +34,11 @@ const loginFields: AppInputProps[] = [
     title: "New Password",
     type: "password",
     placeholder: "Enter your new Password",
+  },
+  {
+    name: "confirmPassword",
+    title: "Confirm Password",
+    type: "password",
+    placeholder: " confirm Password",
   },
 ];

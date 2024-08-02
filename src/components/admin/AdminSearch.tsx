@@ -11,7 +11,7 @@ export default function AdminSearch() {
             const formData = new FormData(e.target as HTMLFormElement);
             const q = String(formData.get('search') ?? "");
             pushParams({ q })
-        }} className="flex justify-stretch">
+        }} className="flex justify-stretch w-fit h-10 max-md:w-full">
             <input
             defaultValue={`${params.get('q')??''}`}
              placeholder="Search..." name="search" className="p-2 flex-shrink grow md:w-80 border border-black-100 rounded-l-md outline-primary" />

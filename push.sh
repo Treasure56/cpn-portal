@@ -2,7 +2,7 @@ git add .
 
 ECHO "________________Added________________"
 
-git commit -m "Started manager pages"
+git commit -m "Added logout functionality"
 
 ECHO "________________Committed________________"
 
