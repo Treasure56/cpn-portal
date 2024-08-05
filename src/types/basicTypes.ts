@@ -32,8 +32,7 @@ export type ActionResponse = {
 }
 
 export type ApiResponse<T = any> = {
-  statusCode: 201 | 404 | 400;
-  msg: 'Success' | 'Failure',
+  status:200 | 201 | 404 | 400;
   data: T
 } 
 
