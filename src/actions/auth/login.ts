@@ -11,8 +11,7 @@ import { z } from "zod";
 
 const schema = z.object ({
     email: validators.email,
-    password: validators.password,
-
+    password: z.string().min(6, "invalid login details")
 })
 type FormType = z.infer<typeof schema>
 
@@ -27,7 +26,7 @@ export async function login(_:ActionResponse, formData:FormData):Promise<ActionR
     try {
         const req = await ClientRequest.post(apis.auth.login,data)
         const res:ApiResponse = await req.json()
-        if(res.status == 201){
+        if(res.status == 200){
             revalidateTag(tags.admin)
             const {set} = cookies()
             set(appCookies.accessToken, res.data.token, {maxAge: 60 * 60 * 24, sameSite: 'strict', path: '/'})

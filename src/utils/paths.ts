@@ -11,10 +11,14 @@ export const paths = {
     admin: "/admin",
     adminStaff: "/admin/staff",
     adminStudents: "/admin/students",
+    adminSingleStudent: (id:string)=>`/admin/students/${id}`,
     adminManagers: "/admin/managers",
     adminCourses: "/admin/courses",
     adminPayments: "/admin/payments",
+    admininvoices: "/admin/invoices",
+    adminSinglePayment: (id:string)=>`/admin/payments/${id}`,
     adminChangePassword: "/admin/change-password",
+    adminInvoice: (id:string)=>`/admin/invoices/${id}`,
 
 
     //manager pages

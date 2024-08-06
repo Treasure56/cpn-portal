@@ -14,7 +14,7 @@ import { IoGrid, IoSettingsOutline } from "react-icons/io5";
 import { MdHomeWork } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { Avatar } from "@radix-ui/themes";
-import { PiStudent, PiUsersFourBold } from "react-icons/pi";
+import { PiInvoiceFill, PiStudent, PiUsersFourBold } from "react-icons/pi";
 import { GrUserManager } from "react-icons/gr";
 
 export default function Sidebar({admin}:{admin: Admin}) {
@@ -91,6 +91,11 @@ const links: SidebarLinkProps[] = [
         title: "Payments",
         icon: <FaMoneyBill />,
         href: paths.adminPayments,
+    },
+    {
+        title: "Invoices",
+        icon: <PiInvoiceFill />,
+        href: paths.admininvoices,
     },
     {
         title: "Settings",

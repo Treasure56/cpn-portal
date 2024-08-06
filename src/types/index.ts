@@ -40,9 +40,10 @@ export type Admin = {
   export type Payments = {
     _id: string;
     createdAt: string;
-    student_id: number;
-    amount: number;
+    student_id: string;
+    amount: string;
     paid_at: string;
+    plan_id: string;
   };
 
   
@@ -66,6 +67,29 @@ export type Admin = {
     course_id: number;
     birth_date: string;
   };
+
+  export type Invoice = {
+    _id: string;
+    student_id: string;
+    amount: string;
+    plan_id: string;
+    message: string,
+    disclaimer: string,
+    date: string;
+    createdAt: string
+  }
+
+  export type PaymentPlan ={
+    _id: string;
+    user_id: string;
+    amount: number; //
+    course_id: string; 
+    installments: number; //
+    estimate: number;
+    last_payment_date: string;
+    next_payment_date: string;
+    reg_date: string; //
+  }
   
   
   

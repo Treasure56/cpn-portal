@@ -20,6 +20,15 @@ export function formatNumber(num: number | string, asMoney = false): string {
     return _num;
 }
 
+
+export function formatDate(date: string) {
+    const dt = new Date(date);
+    const year = dt.getFullYear();
+    const month = String(dt.getMonth() + 1).padStart(2, '0');
+    const day = String(dt.getDate()).padStart(2, '0');
+    return `${month}/${day}/${year}`;
+}
+
 export function formatDuration(duration: number | string): string {
     const _duration = Number(duration)
     if(_duration < 12) return `${_duration} months`

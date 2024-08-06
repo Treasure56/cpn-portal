@@ -1,4 +1,4 @@
-import { Centers, Manager, Staff, Students } from "@/types";
+import { Centers, Invoice, Manager, PaymentPlan, Payments, Staff, Students } from "@/types";
 
 export const centerDummy: Centers = {
   name: "John Doe",
@@ -58,3 +58,44 @@ export const courseDummy = {
 };
 
 export const courseDummys = [courseDummy, courseDummy, courseDummy];
+
+export const paymentDummy:Payments = {
+  _id: "1234567890",
+  createdAt: "2022-01-01T00:00:00.000Z",
+  amount: "10000",
+  student_id: "1234567",
+  plan_id: "ADSE",
+  paid_at: "2022-01-01T00:00:00.000Z",
+};
+
+export const paymentDummys = [paymentDummy, paymentDummy, paymentDummy];
+
+export const plansDummy:PaymentPlan = {
+    _id: "ADSE",
+    amount: 10000,
+    course_id: "ADSE",
+    estimate: 10000,
+    installments: 3,
+    last_payment_date: "2022-01-01T00:00:00.000Z",
+    next_payment_date: "2022-01-01T00:00:00.000Z",
+    reg_date: "2022-01-01T00:00:00.000Z",
+    user_id: "1234567",
+
+    
+  };
+
+export const plansDummys = [plansDummy, plansDummy];
+
+
+export const invoiceDummy:Invoice ={
+    _id: "1234567890",
+    createdAt: "2022-01-01T00:00:00.000Z",
+    amount: "10000",
+    student_id: "1234567",
+    plan_id: "ADSE",
+    date: "2022-01-01T00:00:00.000Z",
+    disclaimer: "This is a disclaimer",
+    message: "This is a message"
+}
+
+export const invoiceDummys = [invoiceDummy, invoiceDummy, invoiceDummy];

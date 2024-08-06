@@ -14,7 +14,6 @@ const schema = z.object ({
     password: validators.password,
     confirmPassword: validators.password,
     accessCode: validators.accessCode
-
 })
 
 type FormType = z.infer<typeof schema>
@@ -45,7 +44,6 @@ export async function adminRegister(_:ActionResponse, formData:FormData):Promise
     } catch (error) {
         console.error(error)
         return {error:"Something went wrong"}
-        
     }
 
     if(success) redirect(paths.admin, RedirectType.replace) 
@@ -53,3 +51,4 @@ export async function adminRegister(_:ActionResponse, formData:FormData):Promise
 
 
 }
+
