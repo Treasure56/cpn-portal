@@ -31,7 +31,13 @@ const config: Config = {
           DEFAULT: "#1e1e1e",
           text: "#131313",
         },
-      }
+        cpn: {
+          lightgreen: "#8fc853",
+          darkgreen: "#115e3e",
+          red: "#bf3437",
+          white: "#fffaff",
+        },
+      },
     },
   },
   plugins: [],

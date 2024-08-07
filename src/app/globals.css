@@ -55,4 +55,11 @@
   table tr:last-of-type{
     border: none !important;
   }
+  .hero-img{
+    @apply w-[90%] md:w-[80%] object-cover object-center relative opacity-80 h-20 md:h-[28%];
+    border-top-left-radius: 120px 150px;
+    border-top-right-radius: 120px 150px;
+    border-bottom-left-radius: 120px 150px;
+    border-bottom-right-radius: 120px 150px;
+  }
 }
