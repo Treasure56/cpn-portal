@@ -4,7 +4,7 @@ import { BsArrowDown } from "react-icons/bs";
 /* eslint-disable @next/next/no-img-element */
 export default function Hero() {
   return (
-    <section className="relative h-[40em] md:h-[90vh] w-full">
+    <section id="Home" className="relative h-[40em] md:h-[90vh] w-full">
       <img
         src="/images/hero-bg.jpg"
         alt="background image"
