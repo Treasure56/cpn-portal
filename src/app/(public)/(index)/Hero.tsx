@@ -18,8 +18,7 @@ export default function Hero() {
               Your trusted partner for IT and tech solutions
             </h1>
             <h2 className="text-neutral-700 text-lg md:text-xl ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-              eum ab ad dicta doloremque nostrum facere officia error, sunt ex?
+              BRIDGING THE GAP BETWEEN BUSINESS AND TECHNOLOGY
             </h2>
             <Link
               href="#Services"
@@ -49,6 +48,6 @@ export default function Hero() {
 
 const images = [
   "/images/networking.avif",
-  "/images/networking.avif",
-  "/images/networking.avif",
+  "/images/sale.png",
+  "/images/consult.jpg",
 ];
