@@ -10,13 +10,19 @@ export const centerDummy: Centers = {
 export const centerDummys = [centerDummy, centerDummy, centerDummy];
 
 export const managersDummy: Manager = {
-  _id: "1234567890",
-  createdAt: "2022-01-01T00:00:00.000Z",
-  full_name: "John Doe",
-  email: "j@j.com",
-  password: "12345",
-  phone: "08123456789",
-  center_id: 1,
+  "_id": "66b24e74fa542e880af0490e",
+  "fullname": "Mr Abundance",
+  "phone": "",
+  "email": "Abu@g.com",
+  "password": "12345",
+  "center": {
+      "_id": "66b22bec22ad23d1991acd05",
+      "name": "Umuahia Center",
+      "location": "Umuahia",
+      "code": "00112243",
+      "createdAt": "2024-08-06T13:58:04.890Z",
+  },
+  "createdAt": "2024-08-06T16:25:24.257Z",
 };
 
 export const managersDummys = [managersDummy, managersDummy, managersDummy];

@@ -10,11 +10,11 @@ export type Admin = {
   export type Manager = {
     _id: string;
     createdAt: string;
-    full_name: string;
+    fullname: string;
     email: string;
     phone: string;
     password: string;
-    center_id: number;
+    center: Centers;
   };
 
   export type Staff = {

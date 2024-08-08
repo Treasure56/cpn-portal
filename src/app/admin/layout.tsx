@@ -4,9 +4,9 @@ import Sidebar from "./Sidebar";
 import { redirect, RedirectType } from "next/navigation";
 import { paths } from "@/utils";
 import { createMetadata } from "@/functions/metadata";
-import { Theme } from "@radix-ui/themes";
 import '@radix-ui/themes/styles.css';
-import { Admin } from "@/types";
+import { fetchAdmin } from "@/actions";
+import CLientLayout from "./ClientLayout";
 
 export const metadata = createMetadata({
     title: "CPN | Admin",
@@ -15,26 +15,24 @@ export const metadata = createMetadata({
 
 export const dynamic = 'force-dynamic';
 
+
 export default async function Layout({ children }: AppLayoutProps) {
-    // const admin = await adminDashboard();
-    // if(!admin || admin === 'error') redirect(paths.adminLogin, RedirectType.replace);
-    const admin = { _id: "jfsahbkhdsb", email: "test@cpn.com" }
+    const admin = await fetchAdmin();
+    if(!admin || admin === 'error') redirect(paths.adminLogin, RedirectType.replace);
 
     return (
-        <Theme>
-            
-            <script async src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
-
-            <section className="flex font-switzer">
-                <aside className="w-0 md:w-[250px] md:min-w-[250px] flex-shrink-0 relative border-r">
-                    <Sidebar admin={admin as Admin} />
-                </aside>
-                <aside className="w-full md:w-[calc(100%-250px)] md:max-w-[calc(100%-250px)] bg-neutral-background min-h-screen px-4 lg:px-8">
-                    <div className="py-2" />
-                    {children}
-                    <div className="py-2" />
-                </aside>
-            </section>
-        </Theme>
+        <CLientLayout>
+                <script async src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
+                <section className="flex font-switzer">
+                    <aside className="w-0 md:w-[250px] md:min-w-[250px] flex-shrink-0 relative border-r">
+                        <Sidebar admin={admin} />
+                    </aside>
+                    <aside className="w-full md:w-[calc(100%-250px)] md:max-w-[calc(100%-250px)] bg-neutral-background min-h-screen px-4 lg:px-8">
+                        <div className="py-2" />
+                        {children}
+                        <div className="py-2" />
+                    </aside>
+                </section>
+        </CLientLayout>
     );
 }

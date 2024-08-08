@@ -22,3 +22,7 @@ a server action is a function that runs on the server, can be used to perform da
 - - can be used with useFormState() hook
 - - [T, action] are the values returned from useFormState hook
 - - action is asigned as the form action
+
+2. Fetch for fetching data
+- - can take parameters
+- - may have a return type

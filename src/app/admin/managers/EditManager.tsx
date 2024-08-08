@@ -14,7 +14,7 @@ export default function EditManager({children, manager}:{children: React.ReactNo
             name: "full_name",
             title: "Full Name",
             placeholder: "Enter Full Name", 
-            value: manager.full_name 
+            value: manager.fullname 
         },
         {
             name: "email",

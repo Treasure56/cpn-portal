@@ -3,4 +3,5 @@ export const tags ={
     manager: 'manager',
     staff: 'staff',
     student: 'student',
+    center: 'center',
 }
