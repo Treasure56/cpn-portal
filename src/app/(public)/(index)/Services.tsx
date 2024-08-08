@@ -38,7 +38,7 @@ export default function Services() {
 
 const items = [
   {
-    img: "/images/about.png",
+    img: "/images/services/it.webp",
     title: "IT Infrastructure & Security Management ",
     value: [
       "Networking Solutions.",
@@ -53,7 +53,7 @@ const items = [
     ],
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/web.avif",
     title: "Web Solutions",
     value: [
       "Domain Name Registration",
@@ -68,7 +68,7 @@ const items = [
     ],
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/business.jpeg",
     title: "Business Ready Solutions",
     value: [
       "E-Commerce Solutions.",
@@ -82,7 +82,7 @@ const items = [
     ],
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/coporate.avif",
     title: "Corporate Trainings ",
     value: `Any solution provided becomes obsolete if doesn't impact your
 primary objective- YOUR BUISNESS OUTCOMES. To mention a
@@ -97,7 +97,7 @@ solutions related to networking and security and we are committed
 to a philosophy of excellence. `,
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/it-power.avif",
     title: "IT Power",
     value: `A reliable uninterruptible power supply is non-negotiable for IT
 infrastructure. We understand that time is paramount, especially
@@ -109,7 +109,7 @@ from selection and implementation to maintenance and upkeep.
 `,
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/ecommerce.avif",
     title: "Business Ready Solutions",
     value: [
       "E-Commerce Solutions.",
@@ -123,7 +123,7 @@ from selection and implementation to maintenance and upkeep.
     ],
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/consult.webp",
     title: "Consultancy Services ",
     value: [
       "Comprehensive penetration test.",
@@ -137,7 +137,7 @@ from selection and implementation to maintenance and upkeep.
     ],
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/seo.avif",
     title: "Search Engine Optimization",
     value: `(Get found on the rst page on Google, Yahoo, Bing and all other
 search engine) Local Search Strategy Map Search Optimization
@@ -146,7 +146,7 @@ Link Building & Content Optimization, Social Media Optimization
 `,
   },
   {
-    img: "/images/about.png",
+    img: "/images/services/advert.avif",
     title: "Paid Search Advertising",
     value: `(Paid listings on Google AdWords and Microsoft adCenter can get
 your site visible to searchers within days.)

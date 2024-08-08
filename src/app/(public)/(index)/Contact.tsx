@@ -3,7 +3,7 @@ import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 
 export default function Contact() {
   return (
-    <section className="py-16 app-container bg-black relative">
+    <section id="Contact" className="py-16 app-container bg-black relative">
       <img
         src="/images/contact.jpeg"
         alt="contact us"
