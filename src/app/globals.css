@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   .app-input {
     @apply bg-neutral-100 w-full border outline-primary text-dark-text py-3 pe-3 rounded-md read-only:opacity-70 read-only:[&not[type="file"]]:pointer-events-none;
@@ -62,4 +66,65 @@
     border-bottom-left-radius: 120px 150px;
     border-bottom-right-radius: 120px 150px;
   }
+}
+
+.carousel-primary,
+.carousel-secondary {
+  top: 26%;
+  transform: translateX(100%);
+  width: 1870px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.carousel-primary img {
+  width: 150px;
+  object-fit: contain;
+  margin-left: 20px;
+  border-radius: 14px;
+}
+
+.carousel-primary {
+  display: flex;
+  gap: 20px;
+  /* justify-content: space-around; */
+  animation: scroll-horizontal 40s linear infinite;
+}
+
+.carousel-secondary {
+  animation: scroll-horizontal 40s linear infinite;
+  animation-delay: 20s;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-primary:hover,
+.carousel-primary:hover~.carousel-secondary {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.carousel-secondary:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+
+.scroll-container:hover>.carousel-primary:not(:hover) {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
 }
