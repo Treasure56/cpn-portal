@@ -66,6 +66,7 @@ export const paymentDummy:Payments = {
   student_id: "1234567",
   plan_id: "ADSE",
   paid_at: "2022-01-01T00:00:00.000Z",
+  voucner_number: "123456789",
 };
 
 export const paymentDummys = [paymentDummy, paymentDummy, paymentDummy];
@@ -95,7 +96,9 @@ export const invoiceDummy:Invoice ={
     plan_id: "ADSE",
     date: "2022-01-01T00:00:00.000Z",
     disclaimer: "This is a disclaimer",
-    message: "This is a message"
+    message: "This is a message",
+    due_date: "2022-01-01T00:00:00.000Z",
+    voucner_number: "123456789",
 }
 
 export const invoiceDummys = [invoiceDummy, invoiceDummy, invoiceDummy];

@@ -56,6 +56,12 @@ const fields:AppInputProps[] = [
     type: "date"
 },
 {
+    name: "due date",
+    title: "Due Date", 
+    placeholder: "Enter Due Date",
+    type: "date"
+},
+{
     name: "message",
     title: "Message", 
     placeholder: "Enter Message",

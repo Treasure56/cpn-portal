@@ -44,6 +44,7 @@ export type Admin = {
     amount: string;
     paid_at: string;
     plan_id: string;
+    voucner_number?: string;
   };
 
   
@@ -77,6 +78,8 @@ export type Admin = {
     disclaimer: string,
     date: string;
     createdAt: string
+    due_date: string
+    voucner_number?: string;
   }
 
   export type PaymentPlan ={
