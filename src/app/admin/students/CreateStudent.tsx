@@ -41,7 +41,7 @@ export default function CreateStudent({children}:{children: React.ReactNode}) {
 
 const fields:AppInputProps[] = [
 {
-    name: "full_name",
+    name: "fullname",
     title: "Full Name",
     placeholder: "Enter Full Name",   
 },

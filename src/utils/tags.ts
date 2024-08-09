@@ -4,4 +4,5 @@ export const tags ={
     staff: 'staff',
     student: 'student',
     center: 'center',
+    course: 'course',
 }

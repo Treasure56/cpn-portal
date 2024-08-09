@@ -1,7 +1,10 @@
 import { courseDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
+import { fetchCourse } from "@/actions";
 
-export default function Table() {
+export default async function Table() {
+  const courses = await fetchCourse()
+  if(!courses || courses == "error") return <div className="info">error fetching courses</div>
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
@@ -13,7 +16,7 @@ export default function Table() {
                <td></td>
             </tr>
             {
-             courseDummys.map( (v, i) => <TableRow key={i} {...v} />)
+             courses.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>

@@ -63,5 +63,6 @@ const fields:AppInputProps[] = [
     name: "phone",
     title: "Phone Number", 
     placeholder: "Enter Phone Number",
+    type: "number"
 }
 ]

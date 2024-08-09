@@ -11,10 +11,16 @@ export const apis = {
 
     admin:{
         createManager: `${HOST}/admin/create-managers`,
+        deleteManager: (id:string)=>`${HOST}/admin/managers/${id}`,
+        editManager: (id:string)=>`${HOST}/admin/managers/${id}`,
         createCenter: `${HOST}/admin/create-center`,
         getAdmin: `${HOST}/profile/admin`,
         getCenter: `${HOST}/admin/centers`,
         getManagers: `${HOST}/admin/managers`,
+        createCourse: `${HOST}/admin/courses`,
+        getCourses: `${HOST}/admin/courses`,
+        editCourse: (id:string)=>`${HOST}/admin/courses/${id}`,
+        deleteCourse:(id:string)=>`${HOST}/admin/courses/${id}`,
     }
 
 }

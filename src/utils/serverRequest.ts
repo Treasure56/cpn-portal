@@ -38,6 +38,19 @@ export const ServerRequest =  {
             },
             body: JSON.stringify(body)
         })
+    },
+    delete (url: string, body: any, init?: RequestInit) {
+        const accessToken = cookies().get(appCookies.accessToken)?.value;
+        if(!accessToken) return null;
+        return fetch(url, {
+            ...init,
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': accessToken,
+            },
+            body: JSON.stringify(body)
+        })
     }
 }
 

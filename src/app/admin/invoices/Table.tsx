@@ -2,6 +2,7 @@ import { invoiceDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 
 export default function Table() {
+
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
