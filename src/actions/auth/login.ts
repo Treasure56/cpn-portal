@@ -17,7 +17,7 @@ type FormType = z.infer<typeof schema>
 
 
 export async function login(_:ActionResponse, formData:FormData):Promise<ActionResponse>{
-    let success = false
+    let nextPath = ""
     const data = formDataToObject<FormType>(formData)
     const validate = schema.safeParse(data)
     //check if validation was successful 
@@ -30,7 +30,7 @@ export async function login(_:ActionResponse, formData:FormData):Promise<ActionR
             revalidateTag(tags.admin)
             const {set} = cookies()
             set(appCookies.accessToken, res.data.token, {maxAge: 60 * 60 * 24, sameSite: 'strict', path: '/'})
-            success = true
+            nextPath = res.data.isAdmin ? paths.admin : paths.manager
         }else{
             return {error:res.data}
         }
@@ -41,6 +41,6 @@ export async function login(_:ActionResponse, formData:FormData):Promise<ActionR
         
     }
 
-    if(success) redirect(paths.admin, RedirectType.replace) 
+    if(nextPath) redirect(nextPath, RedirectType.replace) 
     return {}
 }

@@ -1,20 +1,23 @@
 "use client"
 
+import { editManager } from "@/actions";
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
 import { Manager, Staff, Students } from "@/types";
 import { AlertDialog } from "@radix-ui/themes";
+import { useState, useEffect } from "react";
+import { useFormState } from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 export default function EditModall({children, students}:{children: React.ReactNode, students:Students}) {
 
     const fields:AppInputProps[] = [
         {
-            name: "full_name",
+            name: "fullname",
             title: "Full Name",
             placeholder: "Enter Full Name", 
-            value: students.full_name 
+            value: students.fullname 
         },
         {
             name: "email",
@@ -35,15 +38,22 @@ export default function EditModall({children, students}:{children: React.ReactNo
             value: students.student_id
         },
         {
-            name: "reg_date",
-            title: "Registration Date", 
-            placeholder: "Enter Registration Date",
-            value: students.reg_date
+            name: "birth_date",
+            title: "Birth Date", 
+            placeholder: "Enter Birth Date",
+            type: "date",
+            value: students.birth_date
         }
         ]
+
+        const [res, action] = useFormState(editManager,{})
+        const [open, setOpen] = useState(false);
+        useEffect(() => {
+            if(res.success) setOpen(false);
+        }, [res])
  
     return (
-        <AlertDialog.Root>
+        <AlertDialog.Root open={open} onOpenChange={setOpen}>
             <AlertDialog.Trigger>{children}</AlertDialog.Trigger>
             <AlertDialog.Content>
                <div> 
@@ -53,15 +63,15 @@ export default function EditModall({children, students}:{children: React.ReactNo
                         <IoClose />
                     </AlertDialog.Cancel>
                 </div>
-                <form className="flex flex-col gap-4">
+                <form className="flex flex-col gap-4" action={action}>
                     <FormMessage res={{}} />
-                    <AppSelect name="center_id" title="Center" options={[]} />
                 {
                     fields.map((item) => {
 
-                        return <AppInput key={item.name} {...item} />
+                        return <AppInput key={item.name} {...item}  error={res?.fieldErrors?.[item.name]}/>
                     })
                 }
+                <input type="hidden"  name="studentId" defaultValue={students._id}/>
                 <FormButton className="btn-primary">Update</FormButton>
                 </form>
                </div>

@@ -1,17 +1,16 @@
 import { PageTitle } from "@/components/admin";
-import AdminTotalStaff from "./TotalStaff";
-import AdminTotalStudents from "./TotalStudents";
-import AdminTotalCourses from "./TotalCourses";
+import AdminTotalStaff from "./AdminTotalStaff";
+import AdminTotalStudents from "./AdminTotalStudents";
+import AdminTotalCourses from "./AdminTotalCourses";
 import Table from "./Table";
 import CreateCenter from "./CreateCenter";
 
 export default function Page() {
     return (
         <section className="flex flex-col gap-4">
-            <PageTitle>Admin</PageTitle>
+            <PageTitle>Manager</PageTitle>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {/* <AdminTotalManagers /> */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <AdminTotalStaff />
                 <AdminTotalStudents />
                 <AdminTotalCourses />

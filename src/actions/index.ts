@@ -12,6 +12,7 @@ export {fetchAdmin} from './fetch/fetchAdmin'
 export {fetchCenters} from './fetch/fetchCenters'
 export {fetchManagers} from './fetch/fetchManagers'
 export {fetchCourses as fetchCourse} from './fetch/fetchCourse'
+export {createStudent} from './manager/createStudent'
 
 //delete
 export {deleteManager} from './admin/deleteManager'

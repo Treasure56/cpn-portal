@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import SidebarLink, { SidebarLinkProps } from "./SidebarLink";
 // import AppIcons from "@/components/AppIcons";
 import { paths } from "@/utils";
@@ -7,21 +8,23 @@ import { AppLogo } from "@/components/navbar";
 import { FaBookOpen, FaMoneyBill, FaX } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect } from "react";
-import { useAdminStore } from "@/state";
-import { Admin } from "@/types/";
+import { useAdminStore, useManagerStore } from "@/state";
+import {  Manager } from "@/types/";
 import { IoGrid, IoSettingsOutline } from "react-icons/io5";
+import { MdHomeWork } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { Avatar } from "@radix-ui/themes";
-import { PiStudent, PiUsersFourBold } from "react-icons/pi";
+import { PiInvoiceFill, PiStudent, PiUsersFourBold } from "react-icons/pi";
+import { GrUserManager } from "react-icons/gr";
 
-export default function Sidebar({admin}:{admin: Admin}) {
+export default function Sidebar({manager}:{manager: Manager}) {
     const pathname = usePathname();
-    const {sidebarOpen:open, setSidebar:setOpen, setAdmin, admin:_admin} = useAdminStore();
+    const {sidebarOpen:open, setSidebar:setOpen, setManager, manager:_admin} = useManagerStore();
 
     useLayoutEffect(()=>{
-        setAdmin(admin);
+        setManager(manager);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [admin]);
+    }, [manager]);
     
     useEffect(()=>{
         setOpen(false);
@@ -62,8 +65,9 @@ const links: SidebarLinkProps[] = [
     {
         title: "Overview",
         icon: <IoGrid />,
-        href: paths.manager,
+        href: paths.admin,
     },
+
     {
         title: "Staff",
         icon: <PiUsersFourBold />,
@@ -74,20 +78,25 @@ const links: SidebarLinkProps[] = [
         icon: <PiStudent />,
         href: paths.managerStudents,
     },
-    {
-        title: "Courses",
-        icon: <FaBookOpen />,
-        href: paths.managerCourses,
-    },
+    // {
+    //     title: "Courses",
+    //     icon: <FaBookOpen />,
+    //     href: paths.man,
+    // },
     {
         title: "Payments",
         icon: <FaMoneyBill />,
         href: paths.managerPayments,
     },
     {
+        title: "Invoices",
+        icon: <PiInvoiceFill />,
+        href: paths.managerInvoices,
+    },
+    {
         title: "Settings",
         icon: <IoSettingsOutline />,
-        href: paths.managerChangePassword,
+        href: paths.managerSettings,
     },
     
     {

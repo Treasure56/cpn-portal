@@ -9,6 +9,10 @@ export const apis = {
         resetPassword: `${HOST}/auth/reset-password`,
     },
 
+    general:{
+        getStudents: `${HOST}/manager/students`,
+    },
+
     admin:{
         createManager: `${HOST}/admin/create-managers`,
         deleteManager: (id:string)=>`${HOST}/admin/managers/${id}`,
@@ -21,6 +25,13 @@ export const apis = {
         getCourses: `${HOST}/admin/courses`,
         editCourse: (id:string)=>`${HOST}/admin/courses/${id}`,
         deleteCourse:(id:string)=>`${HOST}/admin/courses/${id}`,
+    },
+
+    manager:{
+        createStudent: `${HOST}/manager/students`,
+        getProfile: `${HOST}/profile/manager`,
+        editStudent: (id:string)=>`${HOST}/manager/students/${id}`,  
+
     }
 
 }

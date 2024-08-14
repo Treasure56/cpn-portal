@@ -1,13 +1,21 @@
 "use client"
 
+import { createCenter } from "@/actions";
 import { FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
 import { AlertDialog } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
+import { useFormState } from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 export default function CreateCenter({children}:{children: React.ReactNode}) {
+    const [res, action] = useFormState(createCenter, {});
+    const [key, setKey] = useState('');
+    useEffect(() => {
+        if(res.success) setKey(old=>old+"-");
+    }, [res])
+
  
     return (
         <AlertDialog.Root>
@@ -20,11 +28,11 @@ export default function CreateCenter({children}:{children: React.ReactNode}) {
                         <IoClose />
                     </AlertDialog.Cancel>
                 </div>
-                <form className="flex flex-col gap-4">
-                    <FormMessage res={{}} />
+                <form key={key} className="flex flex-col gap-4" action={action}>
+                    <FormMessage res={res} />
                 {
                     fields.map((item) => {
-                        return <AppInput key={item.name} {...item} />
+                        return <AppInput key={item.name} {...item}  error={res?.fieldErrors?.[item.name]} />
                     })
                 }
                 <FormButton className="btn-primary">Create</FormButton>

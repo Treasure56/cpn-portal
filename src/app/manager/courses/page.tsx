@@ -1,4 +1,4 @@
-import { PageTitle } from "@/components/admin";
+import { AdminSearch, PageTitle } from "@/components/admin";
 import Table from "./Table";
 import CreateManager from "./CreateCourses";
 
@@ -13,6 +13,9 @@ export default function Page() {
           </button>
         </CreateManager>
       </PageTitle>
+      <div className="flex justify-between max-md:flex-col max-md:gap-2">
+     <AdminSearch />
+     </div>
 
       <Table />
     </section>

@@ -1,7 +1,10 @@
 import { centerDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
+import { fetchCenters } from "@/actions/fetch/fetchCenters";
 
-export default function Table() {
+export default async function Table() {
+  const centers = await fetchCenters();
+  if(!centers || centers == "error") return <div className="info">error fetching centers</div>;
     return (
         <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
             <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
@@ -15,7 +18,7 @@ export default function Table() {
               {/* <td></td> */}
             </tr>
             {
-             centerDummys.map( (v, i) => <TableRow key={i} {...v} />)
+             centers.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>

@@ -59,7 +59,7 @@ export type Admin = {
   export type Students = {
     _id: string;
     createdAt: string;
-    full_name: string;
+    fullname: string;
     email: string;
     phone: string;
     center_id: number;

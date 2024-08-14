@@ -14,7 +14,7 @@ export default function EditModall({children, students}:{children: React.ReactNo
             name: "full_name",
             title: "Full Name",
             placeholder: "Enter Full Name", 
-            value: students.full_name 
+            value: students.fullname 
         },
         {
             name: "email",
