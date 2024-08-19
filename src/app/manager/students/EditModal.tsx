@@ -1,6 +1,7 @@
 "use client"
 
-import { editManager } from "@/actions";
+
+import { editStudent } from "@/actions";
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
@@ -46,7 +47,7 @@ export default function EditModall({children, students}:{children: React.ReactNo
         }
         ]
 
-        const [res, action] = useFormState(editManager,{})
+        const [res, action] = useFormState(editStudent,{})
         const [open, setOpen] = useState(false);
         useEffect(() => {
             if(res.success) setOpen(false);

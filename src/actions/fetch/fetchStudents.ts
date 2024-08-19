@@ -1,9 +1,9 @@
-import { Students } from "@/types";
+import { Paginated, Students } from "@/types";
 import { ActionApiResponse } from "@/types/basicTypes";
 import { apis, tags } from "@/utils";
 import { ServerRequest } from "@/utils/serverRequest";
 
-export async function fetchStudents():Promise<ActionApiResponse<Students[]>>{
+export async function fetchStudents():Promise<ActionApiResponse<Paginated>>{
     try {
         const req = await ServerRequest.get(apis.general.getStudents, {
             next: {tags: [tags.student]}

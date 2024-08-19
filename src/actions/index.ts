@@ -19,3 +19,7 @@ export {deleteManager} from './admin/deleteManager'
 
 //edit
 export {editManager} from './admin/editManager'
+
+//managers
+export {editStudent} from './manager/editStudent'
+export {createStaff} from './manager/createStaff'

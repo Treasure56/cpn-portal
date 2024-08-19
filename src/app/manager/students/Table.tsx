@@ -4,6 +4,7 @@ import { fetchStudents } from "@/actions/fetch/fetchStudents";
 
 export default async function Table() {
   const students = await fetchStudents();
+  console.log(students)
   if(!students || students == "error") return <div className="info">error fetching Students</div>;
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
@@ -19,7 +20,7 @@ export default async function Table() {
                <td></td>
             </tr>
             {
-             students.map( (v, i) => <TableRow key={i} {...v} />)
+             students.existingRecords.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>

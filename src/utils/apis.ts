@@ -31,7 +31,8 @@ export const apis = {
         createStudent: `${HOST}/manager/students`,
         getProfile: `${HOST}/profile/manager`,
         editStudent: (id:string)=>`${HOST}/manager/students/${id}`,  
-
+        deleteStudent: (id:string)=>`${HOST}/manager/students/${id}`,
+        createStaff: `${HOST}/manager/staff`,
     }
 
 }
