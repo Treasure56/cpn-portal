@@ -1,6 +1,7 @@
 "use client"
 
 import { createCenter } from "@/actions";
+import { CoursePicker } from "@/components/admin";
 import { FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";

@@ -3,7 +3,7 @@ import { paymentDummys, plansDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import NewPayment from "./NewPayment";
 
-export default function Table() {
+export default function Table({query}:{query: string}) {
     return (
         <div className="flex flex-col gap-2">
              <div className="flex justify-between">

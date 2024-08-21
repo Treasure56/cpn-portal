@@ -3,9 +3,9 @@ import { ActionApiResponse } from "@/types/basicTypes";
 import { apis, tags } from "@/utils";
 import { ServerRequest } from "@/utils/serverRequest";
 
-export async function fetchStudents(query = ''):Promise<ActionApiResponse<Paginated>>{
+export async function fetchSingleStudent(id:string):Promise<ActionApiResponse<Students>>{
     try {
-        const req = await ServerRequest.get(apis.general.getStudents+query, {
+        const req = await ServerRequest.get(apis.manager.getStudent(id), {
             next: {tags: [tags.student]}
         })
         const res = await req?.json()

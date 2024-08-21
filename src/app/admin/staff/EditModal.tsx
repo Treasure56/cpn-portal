@@ -14,7 +14,7 @@ export default function EditModall({children, staff}:{children: React.ReactNode,
             name: "full_name",
             title: "Full Name",
             placeholder: "Enter Full Name", 
-            value: staff.full_name 
+            value: staff.fullname 
         },
         {
             name: "email",

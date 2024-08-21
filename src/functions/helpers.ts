@@ -106,3 +106,4 @@ export function trimFormData(formData: FormData, p2: string | string[]): FormDat
 export function withAll(list: string[], title = ''):(string| AppSelectOption)[] {
     return [{ title: `All ${title}`, value: '' }, ...list]
 }
+

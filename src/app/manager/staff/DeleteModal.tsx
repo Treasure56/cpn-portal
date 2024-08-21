@@ -1,18 +1,23 @@
 "use client"
 
-import { AppSelect, FormButton, FormMessage } from "@/components/form";
-import AppInput, { AppInputProps } from "@/components/form/AppInput";
-import { useChangeSearchParams } from "@/hooks";
-import { Manager, Staff } from "@/types";
+import { deleteStaff } from "@/actions";
+import { FormButton, FormMessage } from "@/components/form";
+import { Staff } from "@/types";
 import { Dialog } from "@radix-ui/themes";
+import { useState, useEffect } from "react";
+import { useFormState } from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 export default function DeleteModal({children, staff}:{children: React.ReactNode, staff:Staff}) {
 
-  
+    const [res, action] = useFormState(deleteStaff, {});
+    const [open, setOpen] = useState(false);
+    useEffect(() => {
+        if(res.success) setOpen(false);
+    }, [res])
  
     return (
-        <Dialog.Root>
+        <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger>{children}</Dialog.Trigger>
             <Dialog.Content style={{width: "280px"}}>
                <div> 
@@ -22,9 +27,10 @@ export default function DeleteModal({children, staff}:{children: React.ReactNode
                         <IoClose />
                     </Dialog.Close>
                 </div>
-                <form className="flex flex-col gap-4">
-                    <h3>Are you sure you want to delete <span className="font-semibold"> {staff.full_name}</span>?</h3>
-                    <FormMessage res={{}} />
+                <form className="flex flex-col gap-4" action={action}>
+                    <h3>Are you sure you want to delete <span className="font-semibold"> {staff.fullname}</span>?</h3>
+                    <FormMessage res={res} />
+                    <input type="hidden" name="managerId" defaultValue={staff._id} />
               
                 <FormButton className="btn-primary">Yes, Delete</FormButton>
                 </form>

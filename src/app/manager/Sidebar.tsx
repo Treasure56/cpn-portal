@@ -65,7 +65,7 @@ const links: SidebarLinkProps[] = [
     {
         title: "Overview",
         icon: <IoGrid />,
-        href: paths.admin,
+        href: paths.manager,
     },
 
     {

@@ -1,3 +1,4 @@
+import { addCourse } from "@/actions"
 
 
 const HOST = "https://cpn-portal.onrender.com/api"
@@ -33,7 +34,12 @@ export const apis = {
         editStudent: (id:string)=>`${HOST}/manager/students/${id}`,  
         deleteStudent: (id:string)=>`${HOST}/manager/students/${id}`,
         createStaff: `${HOST}/manager/staff`,
-    }
+        getStaff: `${HOST}/manager/staff`, 
+        editStaff: (id:string)=>`${HOST}/manager/staff/${id}`,
+        deleteStaff: (id:string)=>`${HOST}/manager/staff/${id}`,
+        getStudent: (id:string)=> `${HOST}/manager/students/${id}`,
+        addCourse: ` ${HOST}/manager/students/plan`
+       }
 
 }
 

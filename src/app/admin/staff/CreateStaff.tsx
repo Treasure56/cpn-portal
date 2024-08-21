@@ -1,5 +1,6 @@
 "use client"
 
+import { CoursePicker } from "@/components/admin";
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
@@ -22,7 +23,7 @@ export default function CreateStaff({children}:{children: React.ReactNode}) {
                 </div>
                 <form className="flex flex-col gap-4">
                     <FormMessage res={{}} />
-                    <AppSelect name="center_id" title="Center" options={[]} />
+                    <CoursePicker />
                 {
                     fields.map((item) => {
                         return <AppInput key={item.name} {...item} />

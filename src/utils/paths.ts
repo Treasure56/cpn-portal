@@ -25,6 +25,7 @@ export const paths = {
     manager: "/manager",
     managerStaff: "/manager/staff",
     managerStudents: "/manager/students",
+    managerSingleStudent: (id:string)=>`/manager/students/${id}`,
     managerPayments: "/manager/payments",
     managerChangePassword: "/manager/change-password",
     managerCourses: "/manager/courses",

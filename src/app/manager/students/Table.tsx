@@ -1,10 +1,10 @@
 import { studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import { fetchStudents } from "@/actions/fetch/fetchStudents";
+import { Pagination } from "@/components/Pagination";
 
-export default async function Table() {
+export default async function Table({query}:{query: string}) {
   const students = await fetchStudents();
-  console.log(students)
   if(!students || students == "error") return <div className="info">error fetching Students</div>;
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
@@ -24,6 +24,7 @@ export default async function Table() {
             }
           </tbody>
         </table>
+        <Pagination pagination={students} />
         </div>
     );
 }

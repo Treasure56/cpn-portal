@@ -10,7 +10,7 @@ import { paths } from "@/utils";
 export default function TableRow({_id, email, center_id, fullname: full_name, phone, course_id, reg_date, student_id, ...props }:Students) {
   return (
     <tr className=" text-black-400 font-[400] text-sm text-neutral-text bg-light border-b first-of-type:bg-red-400">
-      <td className="py-1 flex gap-2 items-center"><Link href={paths.adminSingleStudent(_id)}>{full_name}</Link></td>
+      <td className="py-1 flex gap-2 items-center"><Link href={paths.managerSingleStudent(_id)}>{full_name}</Link></td>
       <td>
         {email}
       </td>

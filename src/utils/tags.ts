@@ -5,4 +5,5 @@ export const tags ={
     student: 'student',
     center: 'center',
     course: 'course',
+    plan: 'plan'
 }

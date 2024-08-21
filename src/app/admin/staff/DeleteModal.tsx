@@ -23,7 +23,7 @@ export default function DeleteModal({children, staff}:{children: React.ReactNode
                     </Dialog.Close>
                 </div>
                 <form className="flex flex-col gap-4">
-                    <h3>Are you sure you want to delete <span className="font-semibold"> {staff.full_name}</span>?</h3>
+                    <h3>Are you sure you want to delete <span className="font-semibold"> {staff.fullname}</span>?</h3>
                     <FormMessage res={{}} />
               
                 <FormButton className="btn-primary">Yes, Delete</FormButton>

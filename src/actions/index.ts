@@ -23,3 +23,7 @@ export {editManager} from './admin/editManager'
 //managers
 export {editStudent} from './manager/editStudent'
 export {createStaff} from './manager/createStaff'
+export {fetchStaff} from './fetch/fetchStaff'
+export {editStaff} from './manager/editStaff'
+export {deleteStaff} from './manager/deleteStaff'
+export {addCourse} from './manager/addCourse'

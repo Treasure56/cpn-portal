@@ -1,4 +1,5 @@
 "use client"
+import { fetchCenters } from "@/actions";
 import CenterSelect from "@/components/admin/CenterSelect";
 
 export default function Filters() {

@@ -7,6 +7,9 @@
 }
 
 @layer utilities {
+  .pagination-button{
+    @apply flex items-center justify-center px-4 h-10 ms-0 leading-tight  bg-white border border-e-0 border-gray-300 hover:bg-gray-100 hover:text-gray-700 data-[active="true"]:bg-primary data-[active="true"]:text-light
+  }
   .app-input {
     @apply bg-neutral-100 w-full border outline-primary text-dark-text py-3 pe-3 rounded-md read-only:opacity-70 read-only:[&not[type="file"]]:pointer-events-none;
   }

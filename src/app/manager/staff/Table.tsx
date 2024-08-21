@@ -1,9 +1,11 @@
-import { centerDummys, managersDummys, staffDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
-import { FaEdit } from "react-icons/fa";
-import { RiDeleteBinLine } from "react-icons/ri";
+import { fetchStaff } from "@/actions";
 
-export default function Table() {
+export default async function Table() {
+  const staffs = await fetchStaff();
+  if(!staffs || staffs == "error") return <div className="info">error fetching staffs</div>;
+  // console.log(staffs);
+  
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
@@ -20,7 +22,7 @@ export default function Table() {
               {/* <td></td> */}
             </tr>
             {
-             staffDummys.map( (v, i) => <TableRow key={i} {...v} />)
+             staffs.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>

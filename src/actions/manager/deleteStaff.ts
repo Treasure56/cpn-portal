@@ -8,32 +8,24 @@ import { revalidateTag } from "next/cache";
 import { z } from "zod";
 
 const schema = z.object ({
-   fullname: validators.min3,
-   email: validators.min3,
-   phone: validators.phone,
-   courses: z.string(),
-   salary: validators.min3
+   managerId: validators.min3
 })
 type FormType = z.infer<typeof schema>
 
 
-
-export async function createStaff(_:ActionResponse, formData:FormData):Promise<ActionResponse>{
+export async function deleteStaff(_:ActionResponse, formData:FormData):Promise<ActionResponse>{
     const data = formDataToObject<FormType>(formData)
     const validate = schema.safeParse(data)
     //check if validation was successful 
-    if(!validate.success) return {fieldErrors:validate.error.flatten().fieldErrors, error: "fix errors and try again"}
-    data.courses = JSON.parse(data.courses);
-   
+    if(!validate.success) return {fieldErrors:validate.error.flatten().fieldErrors, error: "fix errors and ry again"}
+
     try {
-        console.log(data);
-        
-        const req = await ServerRequest.post(apis.manager.createStaff,data)
+        const req = await ServerRequest.delete(apis.manager.deleteStaff(data.managerId), {})
         const res:ApiResponse = await req?.json()
         console.log({res})
-        if(res.status == 201){
-            revalidateTag(tags.staff);
-            return {success: "Staff created"}
+        if(res.status == 200    ){
+            revalidateTag(tags.manager);
+            return {success: "Staff deleted successfully"} 
         }else{
             return {error:res.data}
         }
@@ -46,4 +38,3 @@ export async function createStaff(_:ActionResponse, formData:FormData):Promise<A
 
     return {}
 }
-

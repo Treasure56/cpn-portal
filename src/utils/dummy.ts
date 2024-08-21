@@ -30,7 +30,7 @@ export const managersDummys = [managersDummy, managersDummy, managersDummy];
 export const staffDummy: Staff = {
   _id: "1234567890",
   createdAt: "2022-01-01T00:00:00.000Z",
-  full_name: "John Doe",
+  fullname: "John Doe",
   email: "j@j.com",
   phone: "08123456789",
   center_id: 1,
