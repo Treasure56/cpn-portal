@@ -2,8 +2,11 @@ import { PaymentPlan } from "@/types";
 import { paymentDummys, plansDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import NewPayment from "./NewPayment";
+import { fetchSingleStudentPayment } from "@/actions";
 
-export default function Table({query}:{query: string}) {
+export default async function Table({query}:{query: string}) {
+  const payment = await fetchSingleStudentPayment();
+  if(!payment || payment == "error") return <div className="info">error fetching payments</div>;
     return (
         <div className="flex flex-col gap-2">
              <div className="flex justify-between">
@@ -28,7 +31,7 @@ export default function Table({query}:{query: string}) {
               <td></td>
             </tr>
             {
-            paymentDummys.map( (v, i) => <TableRow key={i} {...v} />)
+            payment.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>

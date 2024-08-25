@@ -33,7 +33,7 @@ export const staffDummy: Staff = {
   fullname: "John Doe",
   email: "j@j.com",
   phone: "08123456789",
-  center_id: 1,
+  center: 1,
   salary: 10000,
   courses: 1,
 };

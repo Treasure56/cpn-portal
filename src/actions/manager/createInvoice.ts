@@ -8,26 +8,32 @@ import { revalidateTag } from "next/cache";
 import { z } from "zod";
 
 const schema = z.object ({
-   title: validators.min3,
-   duration: z.string().min(1, "invalid duration"),
-   amount: z.string().min(2, "invalid amount")
+   fullname: validators.min3,
+   email: validators.min3,
+   phone: validators.phone,
+   courses: z.string(),
+   salary: validators.min3
 })
 type FormType = z.infer<typeof schema>
 
 
-export async function createCourse(_:ActionResponse, formData:FormData):Promise<ActionResponse>{
+
+export async function createInvoice(_:ActionResponse, formData:FormData):Promise<ActionResponse>{
     const data = formDataToObject<FormType>(formData)
     const validate = schema.safeParse(data)
     //check if validation was successful 
     if(!validate.success) return {fieldErrors:validate.error.flatten().fieldErrors, error: "fix errors and try again"}
-
+    // data.courses = JSON.parse(data.courses);
+   
     try {
-        const req = await ServerRequest.post(apis.admin.createCourse,data)
+        console.log(data);
+        
+        const req = await ServerRequest.post(apis.manager.createStaff,data)
         const res:ApiResponse = await req?.json()
         console.log({res})
         if(res.status == 201){
-            revalidateTag(tags.course);
-            return {success: "Course created"}
+            revalidateTag(tags.payment);
+            return {success: "Invoice created"}
         }else{
             return {error:res.data}
         }
@@ -40,3 +46,4 @@ export async function createCourse(_:ActionResponse, formData:FormData):Promise<
 
     return {}
 }
+

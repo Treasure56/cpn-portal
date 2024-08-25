@@ -16,7 +16,7 @@ import { fetchSingleStudent } from "@/actions/fetch/singleStudent";
         <section className="flex flex-col gap-4">
             <PageTitle>Student Details</PageTitle>
            <Profile {...student} />
-          <Courses />
+          <Courses {...student} />
           <Table query={query} />
         </section>
     );

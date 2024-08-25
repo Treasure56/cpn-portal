@@ -4,7 +4,7 @@ import { fetchStudents } from "@/actions/fetch/fetchStudents";
 import { Pagination } from "@/components/Pagination";
 
 export default async function Table({query}:{query: string}) {
-  const students = await fetchStudents();
+  const students = await fetchStudents(query);
   if(!students || students == "error") return <div className="info">error fetching Students</div>;
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">

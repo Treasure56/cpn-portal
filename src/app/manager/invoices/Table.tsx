@@ -1,7 +1,10 @@
 import { invoiceDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
+import { fetchInvoice as fetchInvoices } from "@/actions";
 
-export default function Table() {
+export default async function Table({query}:{query: string}) {
+  const invoice = await fetchInvoices(query);
+  if(!invoice || invoice == 'error') return <div className="info">error fetching invoices</div>
 
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
@@ -14,7 +17,7 @@ export default function Table() {
                <td></td>
             </tr>
             {
-             invoiceDummys.map( (v, i) => <TableRow key={i} {...v} />)
+             invoice.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>

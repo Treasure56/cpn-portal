@@ -13,9 +13,13 @@ export {fetchCenters} from './fetch/fetchCenters'
 export {fetchManagers} from './fetch/fetchManagers'
 export {fetchCourses as fetchCourse} from './fetch/fetchCourse'
 export {createStudent} from './manager/createStudent'
+export {adminFetchStudents} from './fetch/adminFetchStudents'
+export {adminFetchStaff} from './fetch/adminFetchStaff'
+export {fetchSingleCenter} from './fetch/fetchSingleCenter'
 
 //delete
 export {deleteManager} from './admin/deleteManager'
+export {deleteStudent} from './admin/deleteStudent'
 
 //edit
 export {editManager} from './admin/editManager'
@@ -27,3 +31,7 @@ export {fetchStaff} from './fetch/fetchStaff'
 export {editStaff} from './manager/editStaff'
 export {deleteStaff} from './manager/deleteStaff'
 export {addCourse} from './manager/addCourse'
+export {addPayment} from './manager/addPayment'
+export {fetchSingleStudentPayment} from './fetch/fetchSingleStudentPayment'
+export {fetchInvoice} from './fetch/fetchInvoice'
+export {createInvoice} from './manager/createInvoice'

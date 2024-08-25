@@ -2,8 +2,11 @@ import { AdminSearch, PageTitle } from "@/components/admin";
 import Table from "./Table";
 import CreateManager from "./CreateStudent";
 import Filters from "./Filters";
+import { AppPageProps } from "@/types/basicTypes";
+import { buildUrlQuery } from "@/functions/helpers";
 
-export default function Page() {
+export default function Page({searchParams}:AppPageProps) {
+  const query = buildUrlQuery(searchParams)
   return (
     <section className="flex flex-col gap-4">
       <PageTitle className="py-2 flex justify-between w-full items-center">
@@ -19,7 +22,7 @@ export default function Page() {
      <Filters />
      </div>
 
-      <Table />
+      <Table  query={query}/>
     </section>
   );
 }

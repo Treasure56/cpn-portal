@@ -8,26 +8,24 @@ import { revalidateTag } from "next/cache";
 import { z } from "zod";
 
 const schema = z.object ({
-   title: validators.min3,
-   duration: z.string().min(1, "invalid duration"),
-   amount: z.string().min(2, "invalid amount")
+   studentId: validators.min3
 })
 type FormType = z.infer<typeof schema>
 
 
-export async function createCourse(_:ActionResponse, formData:FormData):Promise<ActionResponse>{
+export async function deleteStudent(_:ActionResponse, formData:FormData):Promise<ActionResponse>{
     const data = formDataToObject<FormType>(formData)
     const validate = schema.safeParse(data)
     //check if validation was successful 
-    if(!validate.success) return {fieldErrors:validate.error.flatten().fieldErrors, error: "fix errors and try again"}
+    if(!validate.success) return {fieldErrors:validate.error.flatten().fieldErrors, error: "fix errors and ry again"}
 
     try {
-        const req = await ServerRequest.post(apis.admin.createCourse,data)
+        const req = await ServerRequest.delete(apis.admin.deleteStudent(data.studentId), {})
         const res:ApiResponse = await req?.json()
         console.log({res})
-        if(res.status == 201){
-            revalidateTag(tags.course);
-            return {success: "Course created"}
+        if(res.status == 200    ){
+            revalidateTag(tags.student);
+            return {success: "Student deleted successfully"} 
         }else{
             return {error:res.data}
         }

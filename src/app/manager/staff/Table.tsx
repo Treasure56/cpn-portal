@@ -1,8 +1,8 @@
 import TableRow from "./TableRow";
 import { fetchStaff } from "@/actions";
 
-export default async function Table() {
-  const staffs = await fetchStaff();
+export default async function Table({query}:{query: string}) {
+  const staffs = await fetchStaff(query);
   if(!staffs || staffs == "error") return <div className="info">error fetching staffs</div>;
   // console.log(staffs);
   
@@ -14,7 +14,6 @@ export default async function Table() {
               <td className="py-2 ">Name</td>
               <td>Email</td>
               <td>Phone</td>
-              <td>Center</td>
               <td>Salary</td>
               <td>Courses</td>
               <td></td>

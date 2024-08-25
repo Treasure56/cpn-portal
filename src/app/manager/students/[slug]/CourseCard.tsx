@@ -1,5 +1,5 @@
 import { formatDate, formatNumber } from "@/functions/helpers";
-import { PaymentPlan, Students } from "@/types";
+import { PaymentPlan, PaymentPlanDetailed, Students } from "@/types";
 
 export default function CoursCard({
   _id,
@@ -10,11 +10,11 @@ export default function CoursCard({
   estimate,
   last_payment_date,
   next_payment_date,
-}: PaymentPlan) {
+}: PaymentPlanDetailed) {
   return (
     <div className="bg-neutral-200 flex flex-col justify-between p-8 rounded-xl text-neutral-700">
       <div className="flex flex-col pb-6">
-        <p className="font-[500] text-2xl">{course_id}</p>
+        <p className="font-[500] text-2xl">{course_id.title}</p>
         <p>{reg_date}</p>
       </div>
       <div className="grid gap-4 grid-cols-2 w-full justify-between mb-2">

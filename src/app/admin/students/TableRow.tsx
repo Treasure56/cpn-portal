@@ -20,7 +20,7 @@ export default function TableRow({_id, email, center_id, fullname: full_name, ph
       <td>{reg_date}</td>
       <td>{course_id}</td>
       <td><div className="flex gap-2 justify-end">
-        <EditModal students={{_id, email, center_id, fullname: full_name, phone, course_id, reg_date, student_id, ...props }}><button className="btn-edit"><FaEdit /></button></EditModal>
+        {/* <EditModal students={{_id, email, center_id, fullname: full_name, phone, course_id, reg_date, student_id, ...props }}><button className="btn-edit"><FaEdit /></button></EditModal> */}
         <DeleteModal students={{_id, email, center_id, fullname: full_name, phone, course_id, reg_date, student_id, ...props }}><button className="btn-delete"><RiDeleteBinLine /></button></DeleteModal>
       </div></td>      
     </tr>

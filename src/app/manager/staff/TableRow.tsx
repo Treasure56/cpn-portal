@@ -8,7 +8,7 @@ import { formatNumber } from "@/functions/helpers";
 export type TableProps = {
   _id: string;
 };
-export default function TableRow({_id, email, center_id, fullname: full_name, phone, courses, salary, ...props }:Staff) {
+export default function TableRow({_id, email, center: center_id, fullname: full_name, phone, courses, salary, ...props }:Staff) {
   return (
     <tr className=" text-black-400 font-[400] text-sm text-neutral-text bg-light border-b first-of-type:bg-red-400">
       <td className="py-1 flex gap-2 items-center">{full_name}</td>
@@ -16,7 +16,6 @@ export default function TableRow({_id, email, center_id, fullname: full_name, ph
         {email}
       </td>
       <td>{phone}</td>
-      <td>{center_id}</td>
       <td>{formatNumber(salary, true)}</td>
       <td>
         <div className="flex flex-wrap gap-2">
@@ -24,8 +23,8 @@ export default function TableRow({_id, email, center_id, fullname: full_name, ph
         </div>
       </td>
       <td><div className="flex gap-2 justify-end">
-        <EditManager staff={{_id, email, center_id, fullname: full_name, phone, courses, salary, ...props }}><button className="btn-edit"><FaEdit /></button></EditManager>
-        <DeleteManager staff={{_id, email, center_id, fullname: full_name, phone, courses, salary, ...props }}><button className="btn-delete"><RiDeleteBinLine /></button></DeleteManager>
+        <EditManager staff={{_id, email, center: center_id, fullname: full_name, phone, courses, salary, ...props }}><button className="btn-edit"><FaEdit /></button></EditManager>
+        <DeleteManager staff={{_id, email, center: center_id, fullname: full_name, phone, courses, salary, ...props }}><button className="btn-delete"><RiDeleteBinLine /></button></DeleteManager>
       </div></td>      
     </tr>
   );

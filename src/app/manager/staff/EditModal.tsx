@@ -68,7 +68,7 @@ export default function EditModall({
             <FormMessage res={res} />
             <CoursePicker value={staff.courses} />
             {fields.map((item) => {
-              return <AppInput key={item.name} {...item} />;
+              return <AppInput key={item.name} {...item} error={res.fieldErrors?.[item.name]} />;
             })}
             <input type="hidden" name="staffId" defaultValue={staff._id} />
             <FormButton className="btn-primary">Update</FormButton>

@@ -13,6 +13,8 @@ export type AppSelectProps = Omit<AppInputProps, "placeholder"> & {
 };
 
 export default function AppSelect({ name, title, options, value, readonly, onChange, error: fieldError, variant = "app-select" }: AppSelectProps) {
+  // console.log(options);
+  
   return (
     <div>
       {title &&

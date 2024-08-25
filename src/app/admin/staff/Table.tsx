@@ -2,8 +2,12 @@ import { centerDummys, managersDummys, staffDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { adminFetchStaff } from "@/actions";
+import { Pagination } from "@/components/Pagination";
 
-export default function Table() {
+export default async function Table({query}:{query: string}) {
+  const staffs = await adminFetchStaff(query);
+  if(!staffs || staffs == "error") return <div className="info">error fetching staffs</div>;
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
@@ -20,10 +24,11 @@ export default function Table() {
               {/* <td></td> */}
             </tr>
             {
-             staffDummys.map( (v, i) => <TableRow key={i} {...v} />)
+             staffs.existingRecords.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>
+        <Pagination pagination={staffs} />
         </div>
     );
 }

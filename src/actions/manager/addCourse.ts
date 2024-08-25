@@ -10,8 +10,9 @@ import { z } from "zod";
 const schema = z.object ({
    amount: validators.min3,
    course_id: validators.min3,
-   installments: validators.phone,
+   installments: z.string(),
    reg_date: z.string(),
+   student_id: z.string(),
 })
 type FormType = z.infer<typeof schema>
 
@@ -26,12 +27,12 @@ export async function addCourse(_:ActionResponse, formData:FormData):Promise<Act
     try {
         // console.log(data);
         
-        const req = await ServerRequest.post(apis.manager.addCourse,data)
+        const req = await ServerRequest.post(apis.manager.addCourse(data.student_id),data)
         const res:ApiResponse = await req?.json()
         console.log({res})
         if(res.status == 201){
             revalidateTag(tags.plan);
-            return {success: "Course Addes"}
+            return {success: "Course Added"}
         }else{
             return {error:res.data}
         }

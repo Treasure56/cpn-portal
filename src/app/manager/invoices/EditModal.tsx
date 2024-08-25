@@ -11,7 +11,7 @@ export default function EditModall({children, students}:{children: React.ReactNo
 
     const fields:AppInputProps[] = [
         {
-            name: "full_name",
+            name: "fullname",
             title: "Full Name",
             placeholder: "Enter Full Name", 
             value: students.fullname 

@@ -23,19 +23,29 @@ export type Admin = {
     fullname: string;
     email: string;
     phone: string;
-    center_id: number;
+    center: string;
     salary: number;
     courses: Courses[];
   };
+  export type StaffDetailed = Staff &{
+    center: Centers
+
+  }
 
   
   export type Centers = {
-    _id: string;
+    _id: string;                 
     createdAt: string;
     name: string;
     location: string;
     code: string;
   };
+
+  export type CenterDetailed ={
+    center: Centers;
+    manager: Manager;
+    studentCount: Number;
+  }
 
   export type Payments = {
     _id: string;
@@ -67,7 +77,12 @@ export type Admin = {
     reg_date: string;
     course_id: number;
     birth_date: string;
+    plan: PaymentPlanDetailed[]
   };
+
+  export type StudentDetailed = Students & {
+    plan: PaymentPlanDetailed[]
+  }
 
   export type Invoice = {
     _id: string;
@@ -84,14 +99,18 @@ export type Admin = {
 
   export type PaymentPlan ={
     _id: string;
-    user_id: string;
     amount: number; //
+    user_id: string;
     course_id: string; 
     installments: number; //
     estimate: number;
     last_payment_date: string;
     next_payment_date: string;
     reg_date: string; //
+  }
+
+  export type PaymentPlanDetailed = PaymentPlan & {
+    course_id: Courses;
   }
 
   export type Paginated<T = any> = {

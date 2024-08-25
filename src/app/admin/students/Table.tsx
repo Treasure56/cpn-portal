@@ -1,7 +1,11 @@
 import { studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
+import { adminFetchStudents } from "@/actions";
+import { Pagination } from "@/components/Pagination";
 
-export default function Table() {
+export default async function Table({query}:{query: string}) {
+  const students = await adminFetchStudents(query);
+  if(!students || students == "error") return <div className="info">error fetching Students</div>;
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
@@ -17,10 +21,11 @@ export default function Table() {
                <td></td>
             </tr>
             {
-             studentDummys.map( (v, i) => <TableRow key={i} {...v} />)
+             students.existingRecords.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>
+        <Pagination pagination={students} />
         </div>
     );
 }
