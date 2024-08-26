@@ -27,16 +27,7 @@ export const managersDummy: Manager = {
 
 export const managersDummys = [managersDummy, managersDummy, managersDummy];
 
-export const staffDummy: Staff = {
-  _id: "1234567890",
-  createdAt: "2022-01-01T00:00:00.000Z",
-  fullname: "John Doe",
-  email: "j@j.com",
-  phone: "08123456789",
-  center: 1,
-  salary: 10000,
-  courses: 1,
-};
+export const staffDummy = ''
 
 export const staffDummys = [staffDummy, staffDummy, staffDummy];
 
@@ -46,11 +37,12 @@ export const studentDummy: Students = {
   fullname: "John Doe",
   email: "j@j.com",
   phone: "08123456789",
-  center: 1,
+  center: centerDummy,
   student_id: "1234567",
   reg_date: "2022-01-01T00:00:00.000Z",
   course_id: 1,
   birth_date: "2022-01-01T00:00:00.000Z",
+  plan: []
 };
 
 export const studentDummys = [studentDummy, studentDummy, studentDummy];
