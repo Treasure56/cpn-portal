@@ -46,7 +46,7 @@ export const studentDummy: Students = {
   fullname: "John Doe",
   email: "j@j.com",
   phone: "08123456789",
-  center_id: 1,
+  center: 1,
   student_id: "1234567",
   reg_date: "2022-01-01T00:00:00.000Z",
   course_id: 1,

@@ -3,6 +3,7 @@ import { AppSelect } from "@/components/form";
 import { useChangeSearchParams } from "@/hooks";
 import { withAll } from "@/functions/helpers";
 import CenterSelect from "@/components/admin/CenterSelect";
+import CoursesSelect from "@/components/admin/CoursesSelect";
 
 export default function Filters() {
   const { params, pushParams } = useChangeSearchParams();
@@ -10,13 +11,7 @@ export default function Filters() {
     <div className="flex gap-3 [&_select]:!py-2">
       
       <CenterSelect />
-      <AppSelect
-        variant="app-select"
-        value={params.get('course') ?? ''}
-        name="course"
-        options={withAll([], 'courses')}
-        onChange={(e) => pushParams({ course: e })}
-      />
+     <CoursesSelect />
     </div>
   );
 }

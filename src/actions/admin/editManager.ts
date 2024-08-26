@@ -26,7 +26,7 @@ export async function editManager(_:ActionResponse, formData:FormData):Promise<A
     try {
         const req = await ServerRequest.patch(apis.admin.editManager(data.managerId),data)
         const res:ApiResponse = await req?.json()
-        console.log({res})
+        console.log({res, data})
         if(res.status == 200){
             revalidateTag(tags.manager);
             return {success: "Manager updated"}

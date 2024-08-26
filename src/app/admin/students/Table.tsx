@@ -11,8 +11,7 @@ export default async function Table({query}:{query: string}) {
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
           <tbody>
             <tr className="bg-dark text-neutral-background font-semibold rounded-md text-base rounded-br-md rounded-bl-md">
-              <td className="py-2 ">Name</td>
-              <td>Email</td>
+              <td className="py-2 ">Student</td>
               <td>Phone</td>
               <td>Center</td>
               <td>Student ID</td>

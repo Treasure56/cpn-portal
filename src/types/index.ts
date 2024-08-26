@@ -72,7 +72,7 @@ export type Admin = {
     fullname: string;
     email: string;
     phone: string;
-    center_id: number;
+    center: Centers;
     student_id: string;
     reg_date: string;
     course_id: number;
