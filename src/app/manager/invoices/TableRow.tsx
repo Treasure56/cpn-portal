@@ -1,22 +1,25 @@
-import { Invoice, Students } from "@/types";
+import { InvoiceDetailed } from "@/types";
 import Link from "next/link";
 import { paths } from "@/utils";
 import { PiInvoiceFill } from "react-icons/pi";
+import { formatDate, formatNumber } from "@/functions/helpers";
 
 
-export default function TableRow({_id, amount, student_id, date,  ...props }:Invoice) {
+export default function TableRow({ _id, student_id, date, createdAt, ...props }: InvoiceDetailed) {
   return (
     <tr className=" text-black-400 font-[400] text-sm text-neutral-text bg-light border-b first-of-type:bg-red-400">
-      <td className="py-1 flex gap-2 items-center">{student_id}</td>
-      <td>
-        {amount}
+      <td className="py-1 flex gap-2 items-center">
+        {/* {formatNumber(JSON.stringify(props.payment_plan_id), true)} */}
       </td>
-      <td>{date}</td>
       <td>
-      <div className="flex gap-2 justify-end">
-          <Link href={paths.adminInvoice(_id)} className=" btn-delete !px-3 !py-1.5 inline-flex items-center gap-1"><PiInvoiceFill />Invoice</Link>
+        {formatNumber(props.payment_plan_id.amount, true)}
+      </td>
+      <td>{formatDate(createdAt)}</td>
+      <td>
+        <div className="flex gap-2 justify-end">
+          <Link href={paths.managerInvoice(_id)} className=" btn-delete !px-3 !py-1.5 inline-flex items-center gap-1"><PiInvoiceFill />Invoice</Link>
         </div>
-      </td>      
+      </td>
     </tr>
   );
 }

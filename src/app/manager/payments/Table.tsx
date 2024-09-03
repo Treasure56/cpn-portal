@@ -1,8 +1,13 @@
 import { paymentDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
+import { fetchPayment } from "@/actions/fetch/fetchPayment";
+import { Pagination } from "@/components/Pagination";
 
-export default function Table({query}:{query: string}) {
+export default async function Table({query}:{query: string}) {
   // const payments = await fetchPayment(query);
+  const payments = await fetchPayment()
+  if(!payments || payments == "error") return <div className="info">Error fetching payments</div>
+  // console.log({payments});
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
@@ -18,10 +23,11 @@ export default function Table({query}:{query: string}) {
               <td></td>
             </tr>
             {
-            paymentDummys.map( (v, i) => <TableRow key={i} {...v} />)
+          payments.existingRecords.map( (v, i) => <TableRow key={i} {...v} />)
             }
           </tbody>
         </table>
+        <Pagination pagination={payments} />
         </div>
     );
 }

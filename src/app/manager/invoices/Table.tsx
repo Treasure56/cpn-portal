@@ -1,9 +1,11 @@
 import { invoiceDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import { fetchInvoice as fetchInvoices } from "@/actions";
+import { log } from "console";
 
 export default async function Table({query}:{query: string}) {
   const invoice = await fetchInvoices(query);
+  log({invoice})
   if(!invoice || invoice == 'error') return <div className="info">error fetching invoices</div>
 
     return (

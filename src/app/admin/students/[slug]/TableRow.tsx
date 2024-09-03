@@ -8,9 +8,9 @@ export default function TableRow({
   _id,
   amount,
   createdAt,
-  paid_at,
-  student_id,
-  plan_id,
+  payment_date: paid_at,
+  user_id: student_id,
+  payment_plan_id: plan_id,
   ...props
 }: Payments) {
   return (

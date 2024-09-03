@@ -50,12 +50,26 @@ export type Admin = {
   export type Payments = {
     _id: string;
     createdAt: string;
-    student_id: string;
+    user_id: string;
     amount: string;
-    paid_at: string;
-    plan_id: string;
-    voucner_number?: string;
+    payment_date: string;
+    payment_plan_id: string;
+    voucher_number?: string;
+    disclaimer: string;
+    message: string;
   };
+
+  export type PaymentsDetailed = Payments & {
+    payment_plan_id: PaymentPlanDetailed & {
+      user_id: Students
+    }
+  }
+  export type PaymentsDetailedlus = Payments & {
+    payment_plan_id: (PaymentPlanDetailed & {
+      user_id: Students
+    })[]
+  }
+
 
   
   export type Courses = {
@@ -88,13 +102,17 @@ export type Admin = {
     _id: string;
     student_id: string;
     amount: string;
-    plan_id: string;
+    payment_plan_id: string;
     message: string,
     disclaimer: string,
     date: string;
     createdAt: string
     due_date: string
     voucner_number?: string;
+  }
+
+  export type InvoiceDetailed = Invoice & {
+    payment_plan_id: PaymentPlanDetailed
   }
 
   export type PaymentPlan ={
@@ -109,8 +127,8 @@ export type Admin = {
     reg_date: string; //
   }
 
-  export type PaymentPlanDetailed = PaymentPlan & {
-    course_id: Courses;
+  export type PaymentPlanDetailed = Omit<PaymentPlan, 'course_id'> & {
+    course_id: Courses | null;
   }
 
   export type Paginated<T = any> = {

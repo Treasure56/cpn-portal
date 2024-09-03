@@ -46,9 +46,9 @@ export default function CreateInvoice({children}:{children: React.ReactNode}) {
 
 const fields:AppInputProps[] = [
 {
-    name: "student_id",
-    title: "Student ID",
-    placeholder: "Enter Student ID",   
+    name: "payment_plan_id",
+    title: "payment plan ID",
+    placeholder: "payment plan ID",   
 },
 {
     name: "amount",
@@ -57,22 +57,10 @@ const fields:AppInputProps[] = [
     type: "number"
 },
 {
-    name: "date",
-    title: "Date", 
-    placeholder: "Enter Date",
-    type: "date"
-},
-{
     name: "due date",
     title: "Due Date", 
     placeholder: "Enter Due Date",
     type: "date"
-},
-{
-    name: "message",
-    title: "Message", 
-    placeholder: "Enter Message",
-    textarea: true
 },
 {
     name: "disclaimer",

@@ -40,5 +40,12 @@ export const apis = {
     deleteStaff: (id: string) => `${HOST}/manager/staff/${id}`,
     getStudent: (id: string) => `${HOST}/manager/students/${id}`,
     addCourse: (id: string) => ` ${HOST}/manager/students/${id}/plan`,
+    createInvoice: `${HOST}/manager/plan/invoice`,
+    addpayments: (id:string) => `${HOST}/manager/students/${id}/payment`,
+    getInvoices: `${HOST}/manager/plan/invoice`,
+    getInvoice: (id:string) => `${HOST}/manager/plan/invoice`,
+    getPayments: `${HOST}/manager/student/payments`,
+    getStudentPayments: (id:string) => `${HOST}/manager/payments/student/${id}`,
+    getSinglePayment: (id:string) => `${HOST}/manager/student/payment/${id}`
   },
 };

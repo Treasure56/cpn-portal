@@ -17,7 +17,7 @@ import { fetchSingleStudent } from "@/actions/fetch/singleStudent";
             <PageTitle>Student Details</PageTitle>
            <Profile {...student} />
           <Courses {...student} />
-          <Table query={query} />
+          <Table query={query} studentId={params.slug} />
         </section>
     );
  }

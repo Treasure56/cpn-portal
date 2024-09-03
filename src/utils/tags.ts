@@ -6,5 +6,6 @@ export const tags ={
     center: 'center',
     course: 'course',
     plan: 'plan',
-    payment: 'payment'
+    invoice: 'invoice',
+    payment: 'payment',
 }

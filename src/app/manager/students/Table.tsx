@@ -6,6 +6,10 @@ import { Pagination } from "@/components/Pagination";
 export default async function Table({query}:{query: string}) {
   const students = await fetchStudents(query);
   if(!students || students == "error") return <div className="info">error fetching Students</div>;
+  // console.log(students.existingRecords[0].plan[0].);
+
+  
+  
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">

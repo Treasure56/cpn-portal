@@ -1,23 +1,31 @@
 import { formatDate, formatNumber } from "@/functions/helpers";
 import { PaymentPlan, PaymentPlanDetailed, Students } from "@/types";
+import NewPayment from "./NewPayment";
 
-export default function CoursCard({
-  _id,
-  course_id,
-  amount,
-  reg_date,
-  installments,
-  estimate,
-  last_payment_date,
-  next_payment_date,
-}: PaymentPlanDetailed) {
+export default function CoursCard(props: PaymentPlanDetailed) {
+  const {
+    _id,
+    course_id,
+    amount,
+    reg_date,
+    installments,
+    estimate,
+    last_payment_date,
+    next_payment_date,
+  } = props;
   return (
     <div className="bg-neutral-200 flex flex-col justify-between p-8 rounded-xl text-neutral-700">
-      <div className="flex flex-col pb-6">
-        <p className="font-[500] text-2xl">{course_id.title}</p>
+      <div className="flex flex-col pb-4">
+        <p className="font-[500] text-2xl">{course_id?.title}</p>
         <p>{reg_date}</p>
       </div>
       <div className="grid gap-4 grid-cols-2 w-full justify-between mb-2">
+        <NewPayment plan={props}>
+          <button className="btn-primary !py-1">Add payment</button>
+        </NewPayment>
+        <NewPayment plan={props}>
+          <button className="btn-dark !py-1">Create invoice</button>
+        </NewPayment>
         <div className="flex flex-col">
           <p>Total Fee:</p>
           <p className="font-[500] text-neutral-900">{formatNumber(amount)}</p>

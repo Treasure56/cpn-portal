@@ -55,7 +55,7 @@ export default function EditManager({children, manager}:{children: React.ReactNo
                 </div>
                 <form className="flex flex-col gap-4" action={action}>
                     <FormMessage res={res} />
-                    <AppSelect name="centerId" title="Center"
+                    <AppSelect name="center" title="Center"
                      error={res?.fieldErrors?.['centerId']}
                      value={manager.center._id}
                      readonly={!centers} options={!centers ? ['loading...'] : centers.map(item => ({title: item.name, value: item._id}))} />

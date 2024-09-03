@@ -11,7 +11,7 @@ const schema = z.object ({
    fullname: validators.min3,
    email: validators.min3,
    phone: validators.phone,
-   centerId: validators.min3,
+   center: validators.min3,
    managerId: validators.min3
 })
 type FormType = z.infer<typeof schema>
@@ -26,7 +26,7 @@ export async function editManager(_:ActionResponse, formData:FormData):Promise<A
     try {
         const req = await ServerRequest.patch(apis.admin.editManager(data.managerId),data)
         const res:ApiResponse = await req?.json()
-        console.log({res, data})
+        console.log({res: res.data, data})
         if(res.status == 200){
             revalidateTag(tags.manager);
             return {success: "Manager updated"}

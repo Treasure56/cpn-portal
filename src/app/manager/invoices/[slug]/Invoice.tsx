@@ -9,7 +9,7 @@ export default async function InvoicePdf({
   _id,
   amount,
   createdAt,
-  plan_id,
+  paymnt_plan_id: plan_id,
   student_id,
  date,
  disclaimer,

@@ -1,25 +1,26 @@
 import { PageTitle } from "@/components/admin";
 import { AppLogo } from "@/components/navbar";
 import PdfScript from "@/components/PdfScript";
-import { formatNumber } from "@/functions/helpers";
-import { Payments } from "@/types";
+import { formatDate, formatNumber } from "@/functions/helpers";
+import { Payments, PaymentsDetailed } from "@/types";
 import { centerDummy, studentDummy } from "@/utils/dummy";
 
 export default async function Reciept({
   _id,
   amount,
   createdAt,
-  paid_at,
-  plan_id,
-  student_id,
-  voucner_number,
-}: Payments) {
-  const student = studentDummy;
-  const center = centerDummy;
+  payment_date: paid_at,
+  payment_plan_id: plan_id,
+  user_id: student_id,
+  voucher_number,
+  disclaimer,
+}: PaymentsDetailed) {
+  const student = plan_id.user_id;
+  const center = plan_id.user_id.center;
 
   return (
     <>
-    <PdfScript title={`receipt_${voucner_number}_${student.fullname}`} />
+    <PdfScript title={`receipt_${voucher_number}_${student.fullname}`} />
       <div
         id="html-content"
         className=" flex flex-col gap-3 aspect-[3/4] bg-light p-20 w-[794px] "
@@ -49,15 +50,15 @@ export default async function Reciept({
           <div className="flex flex-col">
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]">Voucher No:</p>
-              <p className="text-neutral-500">{voucner_number}</p>
+              <p className="text-neutral-500">{voucher_number}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]">Transaction Date:</p>
-              <p className="text-neutral-500">{paid_at}</p>
+              <p className="text-neutral-500">{formatDate(paid_at)}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]">CreatedAt:</p>
-              <p className="text-neutral-500"> {createdAt}</p>
+              <p className="text-neutral-500"> {formatDate(createdAt)}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]">Deposit To:</p>
@@ -77,7 +78,7 @@ export default async function Reciept({
           </div>
           <div className="grid grid-cols-8 gap-2 border-b-nuetral-100 border-b py-2 ">
             <p className="col-span-2 ">#1</p>
-            <p className="col-span-4 ">294</p>
+            <p className="col-span-4 ">#{_id}</p>
             <div className="flex flex-col col-span-2">
               <p className="">Dr</p>
               <p className="text-neutral-500">{formatNumber(amount, true)}</p>
@@ -93,7 +94,7 @@ export default async function Reciept({
         </div>
         <div className="flex flex-col">
           <p className="font-[500]">Disclaimer</p>
-          <p className="text-sm">All payments are not refundable</p>
+          <p className="text-sm">{disclaimer}</p>
         </div>
       </div>
     </>

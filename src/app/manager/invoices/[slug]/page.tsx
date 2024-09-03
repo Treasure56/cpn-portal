@@ -1,9 +1,14 @@
 import { invoiceDummy } from "@/utils/dummy";
 import Invoice from "./Invoice";
 import { PageTitle } from "@/components/admin";
+import { fetchIndividualInvoice } from "@/actions";
+import { AppPageProps } from "@/types/basicTypes";
 
-export default function Page() {
-    const invoice = invoiceDummy;
+export default async function Page(
+  {params}:AppPageProps
+) {
+    const invoice = await fetchIndividualInvoice(params.slug);
+    if(!invoice || invoice == 'error') return <div className="info">error fetching invoice</div>
     
     return (
         <div>

@@ -15,6 +15,7 @@ export function capitalizeFirst(s: string) {
 }
 
 export function formatNumber(num: number | string, asMoney = false): string {
+    if(!num) return ''
     const _num = num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
     if (asMoney) return `₦${_num}`
     return _num;

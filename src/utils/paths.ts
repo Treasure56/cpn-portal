@@ -31,6 +31,10 @@ export const paths = {
     managerCourses: "/manager/courses",
     managerInvoices: "/manager/invoices",
     managerSettings: "/manager/settings",
+    managerInvoice: (id:string)=>`/manager/invoices/${id}`,
+    managerSinglePayment: (id:string)=>`/manager/payments/${id}`,
+
+
 
 
 

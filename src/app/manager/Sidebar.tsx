@@ -43,7 +43,7 @@ export default function Sidebar({manager}:{manager: Manager}) {
             <Avatar variant="solid" color="gray" fallback={_admin?.email[0].toUpperCase()??"?"} />
                 <div className=" overflow-hidden">
                     <h2 className="text-neutral-500 font-semibold line-clamp-1 w-full text-base">{_admin?.email}</h2>
-                    <p className="text-neutral-400 text-sm">Admin User</p>
+                    <p className="text-neutral-400 text-sm">Manager</p>
                 </div>
             </div>
             <div className="flex flex-col gap-2">

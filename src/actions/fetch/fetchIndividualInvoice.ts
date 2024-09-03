@@ -1,13 +1,13 @@
 'use server'
 
-import { Centers, Invoice, InvoiceDetailed } from "@/types";
+import { Centers, Invoice } from "@/types";
 import { ActionApiResponse } from "@/types/basicTypes";
 import { apis, tags } from "@/utils";
 import { ServerRequest } from "@/utils/serverRequest";
 
-export async function fetchInvoice(query = ''):Promise<ActionApiResponse<InvoiceDetailed[]>>{
+export async function fetchIndividualInvoice(invoiceId:string, query = ''):Promise<ActionApiResponse<Invoice>>{
     try {
-        const req = await ServerRequest.get(apis.manager.getInvoices+query, {   next: {tags: [tags.invoice]}
+        const req = await ServerRequest.get(apis.manager.getInvoice(invoiceId)+query, {   next: {tags: [tags.invoice]}
         })
         const res = await req?.json()
         if(res.status == 200) return res.data
