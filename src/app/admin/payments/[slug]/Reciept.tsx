@@ -2,7 +2,7 @@ import { PageTitle } from "@/components/admin";
 import { AppLogo } from "@/components/navbar";
 import PdfScript from "@/components/PdfScript";
 import { formatDate, formatNumber } from "@/functions/helpers";
-import { Payments, PaymentsDetailed } from "@/types";
+import { Payments, PaymentsDetailed, PaymentsDetailedlus } from "@/types";
 import { centerDummy, studentDummy } from "@/utils/dummy";
 
 export default async function Reciept({
@@ -10,13 +10,12 @@ export default async function Reciept({
   amount,
   createdAt,
   payment_date: paid_at,
-  payment_plan_id: plan_id,
-  user_id: student_id,
+  payment_plan_id,
   voucher_number,
   disclaimer,
-}: PaymentsDetailed) {
-  const student = plan_id.user_id;
-  const center = plan_id.user_id.center;
+}: PaymentsDetailedlus) {
+  const student = payment_plan_id[0].user_id;
+  const center = payment_plan_id[0].user_id.center;
 
   return (
     <>

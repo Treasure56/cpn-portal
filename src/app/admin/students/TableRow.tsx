@@ -18,7 +18,7 @@ export default function TableRow({_id, email,  center, fullname: full_name, phon
       <td>{center.name}</td>
       <td>{student_id}</td>
       <td>{reg_date}</td>
-      <td>{plan.map(i => i.course_id.title).join(", ")}</td>
+      <td>{plan.map(i => i.course_id?.title).join(", ")}</td>
       <td><div className="flex gap-2 justify-end">
         {/* <EditModal students={{_id, email, center_id, fullname: full_name, phone, course_id, reg_date, student_id, ...props }}><button className="btn-edit"><FaEdit /></button></EditModal> */}
         <DeleteModal students={{_id, email, center: center, fullname: full_name, plan, phone, reg_date, student_id, ...props }}><button className="btn-delete"><RiDeleteBinLine /></button></DeleteModal>
