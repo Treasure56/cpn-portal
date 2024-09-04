@@ -13,7 +13,7 @@ export default function TableRow({
   payment_plan_id: plan_id,
   ...props
 }: PaymentsDetailedlus) {
-  console.log(plan_id)
+  // console.log(plan_id)
   return (
     <tr className=" text-black-400 font-[400] text-sm text-neutral-text bg-light border-b first-of-type:bg-red-400">
       {/* <td className="py-1 flex flex-col">

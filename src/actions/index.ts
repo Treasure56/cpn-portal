@@ -18,6 +18,8 @@ export {adminFetchStaff} from './fetch/adminFetchStaff'
 export {fetchSingleCenter} from './fetch/fetchSingleCenter'
 export {adminchangepassword} from './admin/adminchangePassword'
 export {adminFetchPayments} from './fetch/adminFetchPayments'
+export {adminFetchSinglePayment} from './fetch/adminFetcSinglePayment'
+
 
 
 //delete
