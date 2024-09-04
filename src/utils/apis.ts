@@ -27,6 +27,8 @@ export const apis = {
     deleteStudent: (id: string) => `${HOST}/admin/students/${id}`,
     getStaffs: `${HOST}/admin/staff`,
     getSingleCenter: (id: string) => `${HOST}/admin/centers/${id}`,
+    adminChangePassword: `${HOST}/profile/change-password`,
+    getAllPayments: `${HOST}/admin/student/payments`
   },
 
   manager: {
@@ -44,8 +46,11 @@ export const apis = {
     addpayments: (id:string) => `${HOST}/manager/students/${id}/payment`,
     getInvoices: `${HOST}/manager/plan/invoice`,
     getInvoice: (id:string) => `${HOST}/manager/plan/invoice`,
+    getIndividualInvoice: (id:string) => `${HOST}/manager/plan/invoice/${id}`,
     getPayments: `${HOST}/manager/student/payments`,
     getStudentPayments: (id:string) => `${HOST}/manager/payments/student/${id}`,
-    getSinglePayment: (id:string) => `${HOST}/manager/student/payment/${id}`
+    getSinglePayment: (id:string) => `${HOST}/manager/student/payment/${id}`,
+    getBalance: (id:string) => `${HOST}/manager/payments/balance/${id}`,
+    changePassword: `${HOST}/profile/change-password`
   },
 };

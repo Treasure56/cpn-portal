@@ -8,4 +8,5 @@ export const tags ={
     plan: 'plan',
     invoice: 'invoice',
     payment: 'payment',
+    balance: 'balance',
 }

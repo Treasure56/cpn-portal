@@ -3,27 +3,27 @@ import { AppLogo } from "@/components/navbar";
 import PdfScript from "@/components/PdfScript";
 import { formatDate, formatNumber } from "@/functions/helpers";
 import { centerDummy, courseDummy, studentDummy } from "@/utils/dummy";
-import { Invoice } from "@/types";
+import { InvoiceDetailedlus } from "@/types";
 
 export default async function InvoicePdf({
   _id,
   amount,
   createdAt,
-  paymnt_plan_id: plan_id,
+  payment_plan_id,
   student_id,
  date,
  disclaimer,
  due_date,
  message,
- voucner_number
+ voucher_number,
 
-}: Invoice) {
-  const student = studentDummy;
-  const course = courseDummy;
+}: InvoiceDetailedlus) {
+  const student = payment_plan_id.user_id;
+  const course = payment_plan_id.course_id;
 
   return (
     <>
-    <PdfScript title={`invoice_${voucner_number}_${student.fullname}`} />
+    <PdfScript title={`invoice_${voucher_number}_${student.fullname}`} />
       <div
         id="html-content"
         className=" flex flex-col gap-3 aspect-[3/4] bg-light p-20 w-[794px]"
@@ -36,10 +36,8 @@ export default async function InvoicePdf({
           <AppLogo toWebsite />
           <div className="flex flex-col text-sm text-right">
             <p className="font-[500]"> Center Point</p>
-            <p>Street Address 1</p>
-            <p>Address Line 2</p>
-            <p>City</p>
-            <p>Nigeria</p>
+            <p>{student.center.name}</p>
+            <p>{student.center.location}</p>
           </div>
         </div>
 
@@ -52,7 +50,7 @@ export default async function InvoicePdf({
           <div className="flex flex-col">
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]">Voucher No:</p>
-              <p className="text-neutral-500">{voucner_number}</p>
+              <p className="text-neutral-500">{voucher_number}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]"> Date:</p>
@@ -74,7 +72,7 @@ export default async function InvoicePdf({
             <p className="col-span-4">Amount</p>
           </div>
           <div className="grid grid-cols-8 gap-2 border-b-nuetral-100 border-b py-2 ">
-            <p className="col-span-4 ">{course.title}</p>
+            <p className="col-span-4 ">{course?.title}</p>
             <p className="col-span-4 "> {formatNumber(amount, true)}</p>
           </div>
         <div className="grid grid-cols-8 gap-2 border-b-nuetral-100 border-b py-2 ">
@@ -86,7 +84,7 @@ export default async function InvoicePdf({
         </div>
         <div className="flex flex-col">
           <p className="font-[500]">Disclaimer</p>
-          <p className="text-sm">All payments are not refundable</p>
+          <p className="text-sm">{disclaimer}</p>
         </div>
         
       </div>

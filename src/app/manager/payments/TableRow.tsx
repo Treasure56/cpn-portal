@@ -25,7 +25,7 @@ export default function TableRow({
       <td>{formatDate(paid_at)}</td>
       <td>
         <div className="flex gap-2 justify-end">
-          <Link href={paths.adminSinglePayment(_id)} className=" btn-delete !px-3 !py-1.5 inline-flex items-center gap-1"><FcDocument /> Receipt</Link>
+          <Link href={paths.managerSinglePayment(_id)} className=" btn-delete !px-3 !py-1.5 inline-flex items-center gap-1"><FcDocument /> Receipt</Link>
         </div>
       </td>
     </tr>

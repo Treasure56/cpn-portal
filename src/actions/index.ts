@@ -16,6 +16,9 @@ export {createStudent} from './manager/createStudent'
 export {adminFetchStudents} from './fetch/adminFetchStudents'
 export {adminFetchStaff} from './fetch/adminFetchStaff'
 export {fetchSingleCenter} from './fetch/fetchSingleCenter'
+export {adminchangepassword} from './admin/adminchangePassword'
+export {adminFetchPayments} from './fetch/adminFetchPayments'
+
 
 //delete
 export {deleteManager} from './admin/deleteManager'
@@ -37,3 +40,5 @@ export {fetchInvoice} from './fetch/fetchInvoice'
 export {createInvoice} from './manager/createInvoice'
 export {fetchIndividualInvoice} from './fetch/fetchIndividualInvoice'
 export {fetchSinglePayment} from './fetch/fetchSinglePayment'
+export {fetchBalance} from './fetch/fetchPlanBalance'
+export {changePassword} from './manager/changepassword'

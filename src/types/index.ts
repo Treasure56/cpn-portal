@@ -108,11 +108,18 @@ export type Admin = {
     date: string;
     createdAt: string
     due_date: string
-    voucner_number?: string;
+    voucher_number?: string;
   }
 
   export type InvoiceDetailed = Invoice & {
     payment_plan_id: PaymentPlanDetailed
+  }
+
+  export type InvoiceDetailedlus = Omit<Invoice, 'payment_plan_id'> &{
+    payment_plan_id: Omit<PaymentPlan, 'course_id' | 'user_id'> & {
+      user_id: Students,
+      course_id: Courses | null
+    }
   }
 
   export type PaymentPlan ={

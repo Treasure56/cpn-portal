@@ -15,7 +15,7 @@ export default async function InvoicePdf({
  disclaimer,
  due_date,
  message,
- voucner_number
+ voucher_number: voucner_number
 
 }: Invoice) {
   const student = studentDummy;

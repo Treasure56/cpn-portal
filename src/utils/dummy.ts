@@ -96,7 +96,7 @@ export const invoiceDummy:Invoice ={
     disclaimer: "This is a disclaimer",
     message: "This is a message",
     due_date: "2022-01-01T00:00:00.000Z",
-    voucner_number: "123456789",
+    voucher_number: "123456789",
 }
 
 export const invoiceDummys = [invoiceDummy, invoiceDummy, invoiceDummy];
