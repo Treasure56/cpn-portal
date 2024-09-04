@@ -13,7 +13,7 @@ const schema = z.object({
   student_id: z.string(),
   message: z.string(),
   disclaimer: z.string(),
-  payment_date: z.string(),
+  payment_date: validators.date,
 });
 type FormType = z.infer<typeof schema>;
 

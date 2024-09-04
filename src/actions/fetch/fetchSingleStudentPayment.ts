@@ -1,11 +1,11 @@
 'use server'
 
-import {  Manager, PaymentsDetailed } from "@/types";
+import {  Manager, PaymentsDetailed, PaymentsDetailedlus } from "@/types";
 import { ActionApiResponse } from "@/types/basicTypes";
 import { apis, tags } from "@/utils";
 import { ServerRequest } from "@/utils/serverRequest";
 
-export async function fetchSingleStudentPayment(id:string):Promise<ActionApiResponse<PaymentsDetailed[]>>{
+export async function fetchSingleStudentPayment(id:string):Promise<ActionApiResponse<PaymentsDetailedlus[]>>{
     try {
         const req = await ServerRequest.get(apis.manager.getStudentPayments(id), {
             next: {tags: [tags.payment]}
