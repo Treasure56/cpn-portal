@@ -13,7 +13,7 @@ export default function Page() {
   
   return (
     <div className=" py-8">
-      <h2 className=" heading">Login Admin</h2>
+      <h2 className=" heading">Login</h2>
       <form action={action}
         className="flex flex-col gap-3 py-3"
       >
@@ -22,12 +22,12 @@ export default function Page() {
           return <AppInput key={item.name} {...item} error={res?.fieldErrors?.[item.name]}  />;
         })}
         <div className="flex justify-end">
-          <Link
+          {/* <Link
             href="/forgot-password"
             className="text-primary r-font-semibold text-sm"
           >
             Forgot Password?
-          </Link>
+          </Link> */}
         </div>
         <FormButton className="btn-primary">Login</FormButton>
         <div className=" flex gap-2">

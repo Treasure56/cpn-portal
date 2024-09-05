@@ -1,9 +1,9 @@
 import { PageTitle } from "@/components/admin";
-import AdminTotalStaff from "./AdminTotalStaff";
-import AdminTotalStudents from "./AdminTotalStudents";
-import AdminTotalCourses from "./AdminTotalCourses";
+import ManagerTotalStudents from "./ManagerTotalStudents";
 import Table from "./Table";
 import CreateCenter from "./CreateCenter";
+import ManagerTotalCourses from "./ManagerTotalCourses";
+import ManagerTotalStaff from "./ManagerTotalStaff";
 
 export default function Page() {
     return (
@@ -11,9 +11,9 @@ export default function Page() {
             <PageTitle>Manager</PageTitle>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <AdminTotalStaff />
-                <AdminTotalStudents />
-                <AdminTotalCourses />
+                <ManagerTotalStaff />
+                <ManagerTotalStudents />
+                <ManagerTotalCourses />
 
             </div>
 

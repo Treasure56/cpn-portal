@@ -54,7 +54,7 @@ export default async function InvoicePdf({
             </div>
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]"> Date:</p>
-              <p className="text-neutral-500">{formatDate(date)}</p>
+              <p className="text-neutral-500">{formatDate(createdAt)}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <p className="font-[500]">Due date:</p>

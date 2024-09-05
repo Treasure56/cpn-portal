@@ -1,21 +1,18 @@
 'use client'
 
-import Image from "next/image";
 import SidebarLink, { SidebarLinkProps } from "./SidebarLink";
 // import AppIcons from "@/components/AppIcons";
 import { paths } from "@/utils";
 import { AppLogo } from "@/components/navbar";
-import { FaBookOpen, FaMoneyBill, FaX } from "react-icons/fa6";
+import { FaMoneyBill, FaX } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect } from "react";
-import { useAdminStore, useManagerStore } from "@/state";
+import { useManagerStore } from "@/state";
 import {  Manager } from "@/types/";
 import { IoGrid, IoSettingsOutline } from "react-icons/io5";
-import { MdHomeWork } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { Avatar } from "@radix-ui/themes";
 import { PiInvoiceFill, PiStudent, PiUsersFourBold } from "react-icons/pi";
-import { GrUserManager } from "react-icons/gr";
 
 export default function Sidebar({manager}:{manager: Manager}) {
     const pathname = usePathname();

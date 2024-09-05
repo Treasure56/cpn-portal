@@ -2,7 +2,8 @@ import CourseCard from "./CourseCard";
 import CreateCourse from "./CreateCourse";
 import { Students } from "@/types";
 
-export default function Courses({plan, _id}: Students) {
+export default function Courses(student: Students) {
+    const {plan, _id} = student;
     // console.log(plan);
     
     
@@ -19,9 +20,9 @@ export default function Courses({plan, _id}: Students) {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
-                    plan.map((plan) => {
+                    plan.map((plan, i) => {
                         return (
-                            <CourseCard key={plan._id} {...plan} />
+                            <CourseCard key={i} student={student} props={plan} />
                         );
                     })
                 }

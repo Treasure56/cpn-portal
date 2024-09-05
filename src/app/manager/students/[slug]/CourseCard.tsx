@@ -1,9 +1,10 @@
 import { formatDate, formatNumber } from "@/functions/helpers";
-import { PaymentPlan, PaymentPlanDetailed, Students } from "@/types";
+import { PaymentPlan, PaymentPlanDetailed, StudentDetailed, Students } from "@/types";
 import NewPayment from "./NewPayment";
 import { fetchBalance } from "@/actions";
+import CreateInvoice from "../CreateInvoice";
 
-export default async function CoursCard(props: PaymentPlanDetailed) {
+export default async function CoursCard({student, props}: {student: StudentDetailed, props: PaymentPlanDetailed}) {
   const {
     _id,
     course_id,
@@ -13,6 +14,7 @@ export default async function CoursCard(props: PaymentPlanDetailed) {
     estimate,
     last_payment_date,
     next_payment_date,
+    
   } = props;
   let balance = await fetchBalance({id: _id})
   if(balance == "error") balance = "0"
@@ -27,9 +29,9 @@ export default async function CoursCard(props: PaymentPlanDetailed) {
         <NewPayment plan={props}>
           <button className="btn-primary !py-1">Add payment</button>
         </NewPayment>
-        <NewPayment plan={props}>
+        <CreateInvoice student={student} index={0}>
           <button className="btn-dark !py-1">Create invoice</button>
-        </NewPayment>
+        </CreateInvoice>
         <div className="flex flex-col">
           <p>Total Fee:</p>
           <p className="font-[500] text-neutral-900">{formatNumber(amount, true)}</p>
