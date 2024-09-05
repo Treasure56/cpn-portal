@@ -6,7 +6,7 @@ import { adminFetchPayments } from "@/actions";
 
 export default async function Table({query}:{query: string}) {
   // const payments = await fetchPayment(query);
-  const payments = await adminFetchPayments()
+  const payments = await adminFetchPayments(query)
   if(!payments || payments == "error") return <div className="info">Error fetching payments</div>
   // console.log({payments});
     return (

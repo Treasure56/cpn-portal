@@ -7,7 +7,7 @@ import { ServerRequest } from "@/utils/serverRequest";
 
 export async function adminFetchSinglePayment(id:string):Promise<ActionApiResponse<PaymentsDetailedlus>>{
     try {
-        const req = await ServerRequest.get(apis.manager.getSinglePayment(id), {
+        const req = await ServerRequest.get(apis.admin.getSinglePayment(id), {
             next: {tags: [tags.payment]}
         })
         const res = await req?.json()

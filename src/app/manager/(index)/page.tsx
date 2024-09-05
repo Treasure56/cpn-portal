@@ -1,9 +1,9 @@
 import { PageTitle } from "@/components/admin";
 import ManagerTotalStudents from "./ManagerTotalStudents";
-import Table from "./Table";
 import CreateCenter from "./CreateCenter";
 import ManagerTotalCourses from "./ManagerTotalCourses";
 import ManagerTotalStaff from "./ManagerTotalStaff";
+import Table from "@/app/manager/staff/Table";
 
 export default function Page() {
     return (
@@ -19,12 +19,10 @@ export default function Page() {
 
            <div className="flex flex-col">
             <div className="py-2 flex justify-between items-center">
-                <h3 className=" text-lg font-[500]">Centers</h3>
-                <CreateCenter>
-                    <button className="btn-dark !py-1.5 !px-5 !font-normal !text-sm">Add Center +</button>
-                </CreateCenter>
+                <h3 className=" text-lg font-[500]">Staffs</h3>
+               
             </div>
-           <Table />
+           <Table query="" />
            </div>
         </section>
     );
