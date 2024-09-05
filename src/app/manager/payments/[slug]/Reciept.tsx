@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { PageTitle } from "@/components/admin";
 import { AppLogo } from "@/components/navbar";
 import PdfScript from "@/components/PdfScript";
@@ -20,11 +21,12 @@ export default async function Reciept({
 
   return (
     <>
-    <PdfScript title={`receipt_${voucher_number}_${student.fullname}`} />
+    <PdfScript title={`receipt_${student.fullname}`} />
       <div
         id="html-content"
         className=" flex flex-col gap-3 aspect-[3/4] bg-light p-20 w-[794px] "
       >
+          <img src="/images/logo.png" alt="logo" className="w-40" />   
         <h3 className="border-b-nuetral-100 border-b py-10 font-[600]">
           Reciept
         </h3>
@@ -79,7 +81,7 @@ export default async function Reciept({
             <p className="col-span-2 ">#1</p>
             <p className="col-span-4 ">#{_id}</p>
             <div className="flex flex-col col-span-2">
-              <p className="">Dr</p>
+              <p className=""></p>
               <p className="text-neutral-500">{formatNumber(amount, true)}</p>
             </div>
           </div>

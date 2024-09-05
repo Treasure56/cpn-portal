@@ -23,7 +23,7 @@ export default async function InvoicePdf({
 
   return (
     <>
-    <PdfScript title={`invoice_${voucher_number}_${student.fullname}`} />
+    <PdfScript title={`invoice_${student.fullname}`} />
       <div
         id="html-content"
         className=" flex flex-col gap-3 aspect-[3/4] bg-light p-20 w-[794px]"

@@ -12,8 +12,8 @@ export default function Page({searchParams}: AppPageProps) {
         Payments
       </PageTitle>
      <div className="flex justify-between max-md:flex-col max-md:gap-2">
-     <AdminSearch />
-     <Filters />
+     {/* <AdminSearch />
+     <Filters /> */}
      </div>
 
       <Table query={query} />
