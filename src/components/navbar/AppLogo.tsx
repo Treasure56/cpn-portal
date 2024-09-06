@@ -9,7 +9,7 @@ export function AppLogo({toWebsite = false}:{toWebsite?:boolean}) {
       <div className="flex gap-1 items-center origin-left max-sm:scale-95">
         <img
           src="/images/cpn-logo.png"
-          alt="CristalCare Logo"
+          alt="cpn Logo"
           className="w-14 max-w-full"
         />
         <h2 className="font-[500] text-primary text-sm leading-[12px]">
@@ -17,6 +17,7 @@ export function AppLogo({toWebsite = false}:{toWebsite?:boolean}) {
           Point <br />
           Network
         </h2>
+        
       </div>
     </Link>
   );
