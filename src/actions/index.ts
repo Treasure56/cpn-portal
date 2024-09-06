@@ -7,6 +7,7 @@ export {login} from './auth/login'
 
 export {createManager} from  './admin/createManager'
 export {createCenter} from  './admin/createCenter'
+export {adminFetchSingleStudent} from './admin/adminFetchSingleStudent'
 
 export {fetchAdmin} from './fetch/fetchAdmin'
 export {fetchCenters} from './fetch/fetchCenters'
@@ -19,6 +20,8 @@ export {fetchSingleCenter} from './fetch/fetchSingleCenter'
 export {adminchangepassword} from './admin/adminchangePassword'
 export {adminFetchPayments} from './fetch/adminFetchPayments'
 export {adminFetchSinglePayment} from './fetch/adminFetcSinglePayment'
+export {adminFetchSingleStudentPayment} from './fetch/adminSingleStudentpayment'
+
 
 
 

@@ -92,11 +92,11 @@ const links: SidebarLinkProps[] = [
         icon: <FaMoneyBill />,
         href: paths.adminPayments,
     },
-    {
-        title: "Invoices",
-        icon: <PiInvoiceFill />,
-        href: paths.admininvoices,
-    },
+    // {
+    //     title: "Invoices",
+    //     icon: <PiInvoiceFill />,
+    //     href: paths.admininvoices,
+    // },
     {
         title: "Settings",
         icon: <IoSettingsOutline />,

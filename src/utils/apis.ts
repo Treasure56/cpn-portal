@@ -30,6 +30,8 @@ export const apis = {
     adminChangePassword: `${HOST}/profile/change-password`,
     getAllPayments: `${HOST}/admin/student/payments`,
     getSinglePayment: (id:string) => `${HOST}/admin/student/payment/${id}`,
+    getSingleStudentPayments: (id:string) => `${HOST}/admin/payments/student/${id}`,
+    getStudent: (id: string) => `${HOST}/admin/students/${id}`,
   },
 
   manager: {

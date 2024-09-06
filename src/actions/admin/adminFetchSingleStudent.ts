@@ -5,9 +5,9 @@ import { ActionApiResponse } from "@/types/basicTypes";
 import { apis, tags } from "@/utils";
 import { ServerRequest } from "@/utils/serverRequest";
 
-export async function fetchSingleStudent(id:string):Promise<ActionApiResponse<Students>>{
+export async function adminFetchSingleStudent(id:string):Promise<ActionApiResponse<Students>>{
     try {
-        const req = await ServerRequest.get(apis.manager.getStudent(id), {
+        const req = await ServerRequest.get(apis.admin.getStudent(id), {
             next: {tags: [tags.student]}
         })
         const res = await req?.json()

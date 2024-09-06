@@ -10,7 +10,7 @@ export async function fetchBalance({id}:{id:string}):Promise<ActionApiResponse<s
             next: {tags: [tags.balance]}
         })
         const res = await req?.json()
-        console.log({res});
+        console.log({resis: res});
         
         if(res.status == 200) return res.data
         else return null
