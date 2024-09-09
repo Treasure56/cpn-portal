@@ -1,4 +1,4 @@
-const HOST = "https://cpn-portal.onrender.com/api";
+const HOST = "https://apicpn.cpntechterminal.com/api";
 export const apis = {
   auth: {
     login: `${HOST}/auth/login`,
