@@ -39,11 +39,11 @@ export default async function CoursCard({student, props}: {student: StudentDetai
 
         <div/>
         <div className="flex flex-col">
-          <p>Paid:</p>
+          <p>Pending:</p>
           <p className="font-[500] text-neutral-900">{balance ? formatNumber(balance, true) : "--"}</p>
         </div>
         <div className="flex flex-col">
-          <p>Pending:</p>
+          <p>Paid:</p>
           <p className="font-[500] text-neutral-900">{balance ? formatNumber(amount - Number(balance), true) : "--"}</p>
         </div>
         <div className="flex flex-col">
