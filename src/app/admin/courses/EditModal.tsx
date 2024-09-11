@@ -24,6 +24,7 @@ export default function EditModall({children, courses}:{children: React.ReactNod
             name: "duration",
             title: "Course Duration (months)",
             placeholder: "Enter Course Duration",
+            type: "number",
             value: courses.duration
         },
         {

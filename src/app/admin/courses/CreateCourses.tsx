@@ -55,6 +55,7 @@ const fields:AppInputProps[] = [
     name: "duration",
     title: "Course Duration (months)",
     placeholder: "Enter Course Duration",
+    type: "number"
 },
 {
     name: "amount",
