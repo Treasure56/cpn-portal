@@ -1,10 +1,9 @@
 'use client'
 
 import { login } from "@/actions";
-import { FormMessage, FormButton } from "@/components/form";
+import { FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { paths } from "@/utils";
-import { error } from "console";
 import Link from "next/link";
 import { useFormState } from "react-dom";
 
