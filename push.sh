@@ -2,7 +2,7 @@ git add .
 
 ECHO "________________Added________________"
 
-git commit -m " implemented: admin payments"
+git commit -m " fixed payment errors"
 
 ECHO "________________Committed________________"
 

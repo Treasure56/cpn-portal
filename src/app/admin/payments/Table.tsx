@@ -8,6 +8,10 @@ export default async function Table({query}:{query: string}) {
   // const payments = await fetchPayment(query);
   const payments = await adminFetchPayments(query)
   if(!payments || payments == "error") return <div className="info">Error fetching payments</div>
+
+  
+  
+  console.log("this", payments.existingRecords.map(i=>i.payment_plan_id));
   // console.log({payments});
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">

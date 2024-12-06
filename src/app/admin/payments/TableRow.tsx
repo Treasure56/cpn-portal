@@ -17,8 +17,8 @@ export default function TableRow({
   return (
     <tr className=" text-black-400 font-[400] text-sm text-neutral-text bg-light border-b first-of-type:bg-red-400">
       <td className="py-1 flex flex-col">
-        <p className="font-[500]">{student.fullname}</p>
-        <p>{student.email}</p>
+        <p className="font-[500]">{!student ? "----" : student.fullname}</p>
+        <p>{!student ? "----" : student.email}</p>
       </td>
       <td>{formatNumber(amount, true)}</td>
       <td>{plan_id[0].course_id?.title}</td>
