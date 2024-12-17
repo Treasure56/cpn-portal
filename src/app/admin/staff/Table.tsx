@@ -4,6 +4,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { adminFetchStaff } from "@/actions";
 import { Pagination } from "@/components/Pagination";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default async function Table({query}:{query: string}) {
   const staffs = await adminFetchStaff(query);
@@ -24,7 +25,12 @@ export default async function Table({query}:{query: string}) {
               {/* <td></td> */}
             </tr>
             {
-             staffs.existingRecords.map( (v, i) => <TableRow key={i} {...v} />)
+             staffs.existingRecords.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                           <td colSpan={7}>something went wrong</td>
+                         </tr>}>
+                           <TableRow {...v} />
+                         </ErrorBoundary>
+            )
             }
           </tbody>
         </table>

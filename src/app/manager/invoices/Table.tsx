@@ -2,6 +2,7 @@ import { invoiceDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import { fetchInvoice as fetchInvoices } from "@/actions";
 import { log } from "console";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default async function Table({query}:{query: string}) {
   const invoice = await fetchInvoices(query);
@@ -19,7 +20,12 @@ export default async function Table({query}:{query: string}) {
                <td></td>
             </tr>
             {
-             invoice.map( (v, i) => <TableRow key={i} {...v} />)
+             invoice.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                           <td colSpan={4}>something went wrong</td>
+                         </tr>}>
+                           <TableRow {...v} />
+                         </ErrorBoundary>
+            )
             }
           </tbody>
         </table>

@@ -2,7 +2,7 @@ git add .
 
 ECHO "________________Added________________"
 
-git commit -m " fixed payment errors"
+git commit -m " added: error handler and tecterminal logo"
 
 ECHO "________________Committed________________"
 

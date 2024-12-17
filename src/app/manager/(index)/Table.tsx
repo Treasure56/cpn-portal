@@ -1,6 +1,7 @@
 import { centerDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import { fetchCenters } from "@/actions/fetch/fetchCenters";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default async function Table() {
   const centers = await fetchCenters();
@@ -18,7 +19,11 @@ export default async function Table() {
               {/* <td></td> */}
             </tr>
             {
-             centers.map( (v, i) => <TableRow key={i} {...v} />)
+             centers.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                           <td colSpan={5}>something went wrong</td>
+                         </tr>}>
+                           <TableRow {...v} />
+                         </ErrorBoundary>)
             }
           </tbody>
         </table>

@@ -1,5 +1,6 @@
 import { invoiceDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default function Table() {
 
@@ -14,7 +15,11 @@ export default function Table() {
                <td></td>
             </tr>
             {
-             invoiceDummys.map( (v, i) => <TableRow key={i} {...v} />)
+             invoiceDummys.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                           <td colSpan={4}>something went wrong</td>
+                         </tr>}>
+                           <TableRow {...v} />
+                         </ErrorBoundary>)
             }
           </tbody>
         </table>

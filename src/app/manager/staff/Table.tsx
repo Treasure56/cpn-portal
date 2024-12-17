@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "react-error-boundary";
 import TableRow from "./TableRow";
 import { fetchStaff } from "@/actions";
 
@@ -21,7 +22,12 @@ export default async function Table({query}:{query: string}) {
               {/* <td></td> */}
             </tr>
             {
-             staffs.map( (v, i) => <TableRow key={i} {...v} />)
+             staffs.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                           <td colSpan={6}>something went wrong</td>
+                         </tr>}>
+                           <TableRow {...v} />
+                         </ErrorBoundary>
+            )
             }
           </tbody>
         </table>

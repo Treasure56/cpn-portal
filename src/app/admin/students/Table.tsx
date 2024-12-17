@@ -2,6 +2,7 @@ import { studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import { adminFetchStudents } from "@/actions";
 import { Pagination } from "@/components/Pagination";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default async function Table({query}:{query: string}) {
   const students = await adminFetchStudents(query);
@@ -20,7 +21,12 @@ export default async function Table({query}:{query: string}) {
                <td></td>
             </tr>
             {
-             students.existingRecords.map( (v, i) => <TableRow key={i} {...v} />)
+             students.existingRecords.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                           <td colSpan={7}>something went wrong</td>
+                         </tr>}>
+                           <TableRow {...v} />
+                         </ErrorBoundary>
+            )
             }
           </tbody>
         </table>

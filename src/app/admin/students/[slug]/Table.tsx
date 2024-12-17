@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "react-error-boundary";
 import TableRow from "./TableRow";
 import { adminFetchSingleStudentPayment } from "@/actions";
 
@@ -28,7 +29,12 @@ export default async function Table({query, studentId}:{query: string; studentId
               <td></td>
             </tr>
             {
-            payment.map( (v, i) => <TableRow key={i} {...v} />)
+            payment.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                          <td colSpan={5}>something went wrong</td>
+                        </tr>}>
+                          <TableRow {...v} />
+                        </ErrorBoundary>
+          )
             }
           </tbody>
         </table>

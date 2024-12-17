@@ -1,6 +1,7 @@
 import { courseDummys, studentDummys } from "@/utils/dummy";
 import TableRow from "./TableRow";
 import { fetchCourse } from "@/actions";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default async function Table() {
   const courses = await fetchCourse()
@@ -16,7 +17,12 @@ export default async function Table() {
                <td></td>
             </tr>
             {
-             courses.map( (v, i) => <TableRow key={i} {...v} />)
+             courses.map( (v, i) => <ErrorBoundary key={i} fallback={<tr className="info">
+                           <td colSpan={4}>something went wrong</td>
+                         </tr>}>
+                           <TableRow {...v} />
+                         </ErrorBoundary>
+            )
             }
           </tbody>
         </table>

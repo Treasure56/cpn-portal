@@ -14,6 +14,11 @@ export default function Navbar() {
           alt="cpms Logo"
           className="w-20 max-w-full"
         />
+        <img
+          src="/images/terminal.png"
+          alt="cpms Logo"
+          className="w-20 max-w-full"
+        />
       </div>
       <nav className="flex gap-4 h-full items-center max-md:hidden">
         {navLinks.map((link) => (
