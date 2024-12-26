@@ -1,7 +1,7 @@
 import { withAll } from "@/functions/helpers";
-import { AppSelect } from "../form";
-import { useCenters, useChangeSearchParams } from "@/hooks";
+import { useChangeSearchParams } from "@/hooks";
 import { useCourses } from "@/hooks/useCourses";
+import { AppSelect } from "../form";
 
 export default function CoursesSelect() {
     const { params, pushParams } = useChangeSearchParams();

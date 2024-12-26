@@ -11,9 +11,9 @@ export default function Page({searchParams}: AppPageProps) {
       <PageTitle className="py-2 flex justify-between w-full items-center">
         Payments
       </PageTitle>
-     <div className="flex justify-between max-md:flex-col max-md:gap-2">
-     {/* <AdminSearch />
-     <Filters /> */}
+     <div className="flex justify-between max-md:flex-col max-md:gap-2 gap-2">
+     <AdminSearch />
+     <Filters />
      </div>
 
       <Table query={query} />
