@@ -15,7 +15,7 @@ export default function Filters() {
         variant="app-select"
         value={params.get('course') ?? ''}
         name="course"
-        options={!courses ? ['loading...'] : withAll(courses.map(item => ({title: item.title, value: item.title}).value), 'courses')}
+        readonly={!courses} options={!courses ? ['loading...'] : withAll(courses.map(item => ({title: item.title, value: item._id})), "courses")}
         onChange={(e) => pushParams({ course: e })}
       />
     </div>
