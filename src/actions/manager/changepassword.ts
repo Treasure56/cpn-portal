@@ -9,7 +9,7 @@ import { redirect, RedirectType } from "next/navigation";
 import { z } from "zod";
 
 const schema = z.object ({
-    currentPassword: validators.password,
+    // currentPassword: validators.password,
     newPassword: validators.password,
     confirm_password: validators.password
 })
