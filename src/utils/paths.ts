@@ -19,6 +19,7 @@ export const paths = {
     adminSinglePayment: (id:string)=>`/admin/payments/${id}`,
     adminChangePassword: "/admin/change-password",
     adminInvoice: (id:string)=>`/admin/invoices/${id}`,
+    adminSingleStaff: (id:string)=>`/admin/staff/${id}`,
 
 
     //manager pages
@@ -33,6 +34,7 @@ export const paths = {
     managerSettings: "/manager/settings",
     managerInvoice: (id:string)=>`/manager/invoices/${id}`,
     managerSinglePayment: (id:string)=>`/manager/payments/${id}`,
+    manageStaffSingle: (id:string)=>`/manager/staff/${id}`,
 
 
 

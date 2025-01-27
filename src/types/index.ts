@@ -26,10 +26,16 @@ export type Admin = {
     center: string;
     salary: number;
     courses: Courses[];
+    image?: string
+  };
+  export type StaffCertificate = {
+    name: string;
+    url: string;
+    _id: string
   };
   export type StaffDetailed = Staff &{
     center: Centers
-
+    certificate?: StaffCertificate[];
   }
 
   

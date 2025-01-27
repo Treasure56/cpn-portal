@@ -22,8 +22,23 @@ export const ServerRequest =  {
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': accessToken,
+                ...init?.headers
             },
             body: JSON.stringify(body)
+        })
+    },
+    postFile (url: string, body: any, init?: RequestInit) {
+        const accessToken = cookies().get(appCookies.accessToken)?.value;
+        if(!accessToken) return null;
+        return fetch(url, {
+            ...init,
+            method: 'POST',
+            headers: {
+                // 'Content-Type': 'multipart/form-data',
+                'x-access-token': accessToken,
+                ...init?.headers
+            },
+            body: body
         })
     },
     patch (url: string, body: any, init?: RequestInit) {
@@ -33,7 +48,7 @@ export const ServerRequest =  {
             ...init,
             method: 'PATCH',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'multipart/form-data',
                 'x-access-token': accessToken,
             },
             body: JSON.stringify(body)

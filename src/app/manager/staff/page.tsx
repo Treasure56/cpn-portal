@@ -1,6 +1,5 @@
 import { AdminSearch, PageTitle } from "@/components/admin";
 import Table from "./Table";
-import Filters from "./Filters";
 import CreateStaff from "./CreateStaff";
 import { AppPageProps } from "@/types/basicTypes";
 import { buildUrlQuery } from "@/functions/helpers";

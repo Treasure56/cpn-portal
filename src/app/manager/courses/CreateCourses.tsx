@@ -57,8 +57,8 @@ const fields:AppInputProps[] = [
     placeholder: "Enter Course Duration",
 },
 {
-    name: "Bill",
-    title: "Course Amount", 
+    name: "amount",
+    title: "Total Billing", 
     placeholder: "Enter Course Amount",
     type: "number"
 },
