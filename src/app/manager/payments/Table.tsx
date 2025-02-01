@@ -5,10 +5,8 @@ import { Pagination } from "@/components/Pagination";
 import { ErrorBoundary } from "react-error-boundary";
 
 export default async function Table({query}:{query: string}) {
-  // const payments = await fetchPayment(query);
-  const payments = await fetchPayment()
+  const payments = await fetchPayment(query);
   if(!payments || payments == "error") return <div className="info">Error fetching payments</div>
-  // console.log({payments});
     return (
       <div className="w-full max-w-full overflow-x-auto [&>table]:mb-6">
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">

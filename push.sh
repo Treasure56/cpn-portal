@@ -2,7 +2,7 @@ git add .
 
 ECHO "________________Added________________"
 
-git commit -m " Added: staff single page to the admin panel"
+git commit -m " fixed manager filters and search"
 
 ECHO "________________Committed________________"
 

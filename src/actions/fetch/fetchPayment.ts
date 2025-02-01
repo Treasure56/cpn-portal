@@ -5,9 +5,9 @@ import { ActionApiResponse } from "@/types/basicTypes";
 import { apis, tags } from "@/utils";
 import { ServerRequest } from "@/utils/serverRequest";
 
-export async function fetchPayment():Promise<ActionApiResponse<Paginated<PaymentsDetailedlus>>>{
+export async function fetchPayment(query= ''):Promise<ActionApiResponse<Paginated<PaymentsDetailedlus>>>{
     try {
-        const req = await ServerRequest.get(apis.manager.getPayments, {
+        const req = await ServerRequest.get(apis.manager.getPayments + query, {
             next: {tags: [tags.payment]}
         })
         const res = await req?.json()

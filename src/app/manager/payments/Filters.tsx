@@ -9,7 +9,6 @@ export default function Filters() {
   const { params, pushParams } = useChangeSearchParams();
   return (
     <div className="flex gap-3 [&_select]:!py-2">
-      
     <CoursesSelect />
     </div>
   );

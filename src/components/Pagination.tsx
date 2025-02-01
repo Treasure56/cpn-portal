@@ -1,8 +1,6 @@
 'use client'
-
 import * as Popover from '@radix-ui/react-popover';
-import { HTMLAttributes, useCallback, useMemo } from "react";
-// import { debugLog } from "@/functions/helpers";
+import { HTMLAttributes,  useMemo } from "react";
 import { useChangeSearchParams } from "@/hooks";
 import { Paginated } from '@/types';
 import { debugLog } from '@/functions/debug';
