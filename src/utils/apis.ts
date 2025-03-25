@@ -1,3 +1,4 @@
+import { editPayment } from "@/actions/manager/editPayment";
 import { uploadCert } from "@/actions/manager/uploadcert";
 
 const HOST = "https://apicpn.cpntechterminal.com/api";
@@ -35,6 +36,7 @@ export const apis = {
     getSingleStudentPayments: (id:string) => `${HOST}/admin/payments/student/${id}`,
     getStudent: (id: string) => `${HOST}/admin/students/${id}`,
     getSingleStaff: (id: string) => `${HOST}/admin/staff/${id}`,
+    deletePayment: (id:string) => `${HOST}/admin/student/payment/${id}`,
   },
 
   manager: {
@@ -61,5 +63,7 @@ export const apis = {
     getSingleStaff: (id: string) => `${HOST}/manager/staff/${id}`,
     uploadProfile: (id: string) => `${HOST}/manager/staff/${id}/upload-image`,
     uploadCert: (id: string) => `${HOST}/manager/staff/${id}/upload-certificate`,
+    deleteCert: (staffId: string, certId:string) => `${HOST}/manager/staff/${staffId}/certificate/${certId}`,
+    editPayment: (id:string) => `${HOST}/manager/student/payment/${id}`,
   },
 };

@@ -155,6 +155,14 @@ export type Admin = {
       totalDocuments: number,
       currentPage: number
   }
+
+  export type report ={
+    _id: string
+    paymets: number
+    inquiries: number
+    enquirySource:string[]
+    paymentType:string[]
+  }
   
   
   

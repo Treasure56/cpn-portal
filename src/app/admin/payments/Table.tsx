@@ -26,6 +26,7 @@ export default async function Table({ query }: { query: string }) {
             <td>Course</td>
             <td>Payment Date</td>
             <td></td>
+            <td></td>
           </tr>
           {payments.existingRecords.map((v, i) => (
             <ErrorBoundary key={i} fallback={<tr className="info">

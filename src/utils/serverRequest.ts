@@ -48,7 +48,7 @@ export const ServerRequest =  {
             ...init,
             method: 'PATCH',
             headers: {
-                'Content-Type': 'multipart/form-data',
+                'Content-Type': 'application/json',
                 'x-access-token': accessToken,
             },
             body: JSON.stringify(body)

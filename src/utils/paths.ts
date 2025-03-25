@@ -35,6 +35,7 @@ export const paths = {
     managerInvoice: (id:string)=>`/manager/invoices/${id}`,
     managerSinglePayment: (id:string)=>`/manager/payments/${id}`,
     manageStaffSingle: (id:string)=>`/manager/staff/${id}`,
+    managerReport: "/manager/report",
 
 
 

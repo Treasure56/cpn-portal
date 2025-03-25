@@ -26,12 +26,9 @@ export default async function Table({
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
         <tbody>
           <tr className="bg-dark text-neutral-background font-semibold rounded-md text-base rounded-br-md rounded-bl-md">
-            {/* <td className="py-2 ">Student</td> */}
-            {/* <td></td> */}
             <td>Title</td>
-            {/* <td></td> */}
-            {/* <td>Student ID</td> */}
             <td>open</td>
+            <td></td>
           </tr>
           {staff.certificate.map((v, i) => (
             <ErrorBoundary

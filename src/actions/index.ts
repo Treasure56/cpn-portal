@@ -22,6 +22,8 @@ export {adminFetchPayments} from './fetch/adminFetchPayments'
 export {adminFetchSinglePayment} from './fetch/adminFetcSinglePayment'
 export {adminFetchSingleStudentPayment} from './fetch/adminSingleStudentpayment'
 export {adminFetchSingleStaff} from './fetch/adminFetchSingleStaff'
+export {deleteCertificate} from './manager/deleCertificate'
+export {deletePayment} from './admin/deletePayment'
 
 
 
@@ -49,3 +51,4 @@ export {fetchSinglePayment} from './fetch/fetchSinglePayment'
 export {fetchBalance} from './fetch/fetchPlanBalance'
 export {changePassword} from './manager/changepassword'
 export {uploadProfile} from './manager/uploadProfile'
+export {editPayment} from './manager/editPayment'

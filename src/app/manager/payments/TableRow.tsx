@@ -3,6 +3,8 @@ import { formatNumber, formatDate } from "@/functions/helpers";
 import { FcDocument } from "react-icons/fc";
 import Link from "next/link";
 import { paths } from "@/utils";
+import { FaEdit } from "react-icons/fa";
+import EditModal from "./EditModal";
 
 export default function TableRow({
   _id,
@@ -27,6 +29,26 @@ export default function TableRow({
         <div className="flex gap-2 justify-end">
           <Link href={paths.managerSinglePayment(_id)} className=" btn-delete !px-3 !py-1.5 inline-flex items-center gap-1"><FcDocument /> Receipt</Link>
         </div>
+      </td>
+      <td>
+         <div className="flex gap-2 justify-end">
+                  {/* <EditModal
+                    payments={{
+                      _id,
+                      amount,
+                      createdAt,
+                      payment_date: paid_at,
+                      user_id: student_id,
+                      payment_plan_id: plan_id,
+                      ...props,
+                    }}
+                  >
+                    <button className="btn-edit">
+                      <FaEdit />
+                    </button>
+                  </EditModal> */}
+                  {/* <DeleteModal students={{_id, email, center_id, fullname: full_name, phone, course_id, reg_date, student_id, ...props }}><button className="btn-delete"><RiDeleteBinLine /></button></DeleteModal> */}
+                </div>
       </td>
     </tr>
   );

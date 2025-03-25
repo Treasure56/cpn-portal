@@ -1,7 +1,7 @@
-import {
-  StaffCertificate
-} from "@/types";
+import { StaffCertificate } from "@/types";
 import { FcDocument } from "react-icons/fc";
+import DeleteModal from "./DeleteModal";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 export default function TableRow(props: StaffCertificate) {
   // console.log(plan_id);
@@ -22,6 +22,22 @@ export default function TableRow(props: StaffCertificate) {
           >
             <FcDocument /> open
           </a>
+        </div>
+      </td>
+
+      <td>
+        <div className="flex gap-2 justify-end">
+          <DeleteModal
+            certificate={{
+              name: props.name,
+              url: props.url,
+              _id: props._id,
+            }}
+          >
+            <button className="btn-delete">
+              <RiDeleteBinLine />
+            </button>
+          </DeleteModal>
         </div>
       </td>
     </tr>

@@ -43,7 +43,7 @@
   }
 
   .admin-side-link-logout {
-    @apply !text-red-800 !text-red-700 p-2 rounded-md !bg-red-50
+    @apply !text-red-800  p-2 rounded-md !bg-red-50
   }
 
   .btn-edit {

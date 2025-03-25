@@ -1,30 +1,29 @@
 "use client";
 
-import { addPayment } from "@/actions";
-import { AppSelect, FormButton, FormMessage } from "@/components/form";
+import { addPayment, editPayment } from "@/actions";
+import { FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
-import { useChangeSearchParams } from "@/hooks";
-import { PaymentPlanDetailed } from "@/types";
+import { PaymentsDetailedlus } from "@/types";
 import { AlertDialog } from "@radix-ui/themes";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { IoClose } from "react-icons/io5";
 
-export default function NewPayment({
+export default function EditPayment({
   children,
-  plan,
+  payment,
 }: {
   children: React.ReactNode;
-  plan: PaymentPlanDetailed;
+  payment: PaymentsDetailedlus;
 }) {
     const params = useParams();
   const fields: AppInputProps[] = [
     {
       name: "amount",
-      title: " Total Amount",
+      title: "Amount",
       placeholder: "Enter Amount",
-      value: plan.estimate.toString(),
+      value: payment.amount.toString(),
       icon: <del>N</del>,
     },
     {
@@ -32,26 +31,31 @@ export default function NewPayment({
       title: "Payment Date",
       type: "date",
       placeholder: "Enter Paid Date",
+      value: payment.payment_date
     },
     {
       name: "disclaimer",
       title: "Disclaimer",
       placeholder: "Enter Disclaimer",
       textarea: true,
-      value: "All funds deposited are not refundable",
+      value: payment.disclaimer,
     },
     {
       name: "message",
       title: "Message",
       placeholder: "Enter Message",
       textarea: true,
+      value: payment.message
     },
   ];
-  const [res, action] = useFormState(addPayment, {});
+  const [res, action] = useFormState(editPayment, {});
   const [key, setKey] = useState("");
   useEffect(() => {
     if (res.success) setKey((old) => old + "-");
   }, [res]);
+
+  console.log({ payment });
+  
 
   return (
     <AlertDialog.Root>
@@ -59,15 +63,15 @@ export default function NewPayment({
       <AlertDialog.Content>
         <div>
           <div className="flex justify-between pb-6">
-            <h4 className="font-semibold">Add New Payment</h4>
+            <h4 className="font-semibold">Edit Payment</h4>
             <AlertDialog.Cancel>
               <IoClose />
             </AlertDialog.Cancel>
           </div>
           <form className="flex flex-col gap-4" action={action} key={key}>
             <FormMessage res={res} />
-            <input type="hidden" name="payment_plan_id" value={plan._id} />
-            <input type="hidden" name="student_id" value={params.slug} />
+            {/* <input type="hidden" name="payment_plan_id" value={"679ce7cd0a00f9fa1f295b67"} /> */}
+            <input type="hidden" name="payment_id" value={payment._id} />
             {fields.map((item) => {
               return (
                 <AppInput

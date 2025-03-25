@@ -1,13 +1,22 @@
 "use client"
 
+import { editPayment } from "@/actions";
 import { AppSelect, FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
 import { useChangeSearchParams } from "@/hooks";
 import { Manager, Staff, Students } from "@/types";
 import { AlertDialog } from "@radix-ui/themes";
+import { useState, useEffect } from "react";
+import { useFormState } from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 export default function EditModall({children, students}:{children: React.ReactNode, students:Students}) {
+
+      const [res, action] = useFormState(editPayment, {});
+      const [key, setKey] = useState("");
+      useEffect(() => {
+        if (res.success) setKey((old) => old + "-");
+      }, [res]);
 
     const fields:AppInputProps[] = [
         {
@@ -43,18 +52,18 @@ export default function EditModall({children, students}:{children: React.ReactNo
         ]
  
     return (
-        <AlertDialog.Root>
+        <AlertDialog.Root >
             <AlertDialog.Trigger>{children}</AlertDialog.Trigger>
             <AlertDialog.Content>
                <div> 
                 <div className="flex justify-between pb-6">
-                    <h4 className="font-semibold">Edit Student</h4>
+                    <h4 className="font-semibold">Edit Payment</h4>
                     <AlertDialog.Cancel>
                         <IoClose />
                     </AlertDialog.Cancel>
                 </div>
-                <form className="flex flex-col gap-4">
-                    <FormMessage res={{}} />
+                <form className="flex flex-col gap-4" action={action}>
+                    <FormMessage res={res} />
                     <AppSelect name="center_id" title="Center" options={[]} />
                 {
                     fields.map((item) => {
