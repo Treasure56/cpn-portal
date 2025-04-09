@@ -81,8 +81,8 @@ export const plansDummy:PaymentPlan = {
     next_payment_date: "2022-01-01T00:00:00.000Z",
     reg_date: "2022-01-01T00:00:00.000Z",
     user_id: "1234567",
-
-    
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
   };
 
 export const plansDummys = [plansDummy, plansDummy];
