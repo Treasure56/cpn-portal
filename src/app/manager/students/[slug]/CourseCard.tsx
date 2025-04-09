@@ -1,7 +1,7 @@
 import { formatDate, formatNumber } from "@/functions/helpers";
 import { PaymentPlan, PaymentPlanDetailed, StudentDetailed, Students } from "@/types";
 import NewPayment from "./NewPayment";
-import { fetchBalance } from "@/actions";
+import { fetchBalance, fetchManagerPaymentPlan } from "@/actions";
 import CreateInvoice from "../CreateInvoice";
 
 export default async function CoursCard({student, props}: {student: StudentDetailed, props: PaymentPlanDetailed}) {
@@ -14,10 +14,19 @@ export default async function CoursCard({student, props}: {student: StudentDetai
     estimate,
     last_payment_date,
     next_payment_date,
-    
+    createdAt,
+    updatedAt,
+    per_installment,
+    user_id,
   } = props;
-  let balance = await fetchBalance({id: _id})
-  if(balance == "error") balance = "0"
+  let [paid, pending] = [0, 0]
+  let paymentPlanNew = await fetchManagerPaymentPlan({id: _id})
+  if(paymentPlanNew !== "error" && paymentPlanNew){
+    paid = paymentPlanNew.paid !,
+    pending = paymentPlanNew.pending !
+  }
+
+  console.log(formatNumber, paid);
 
   return (
     <div className="bg-neutral-200 flex flex-col justify-between p-8 rounded-xl text-neutral-700">
@@ -40,11 +49,11 @@ export default async function CoursCard({student, props}: {student: StudentDetai
         <div/>
         <div className="flex flex-col">
           <p>Paid:</p>
-          <p className="font-[500] text-neutral-900">{balance ? formatNumber(balance, true) : "--"}</p>
+          <p className="font-[500] text-neutral-900">{formatNumber(paid ?? 0)?? "--"}</p>
         </div>
         <div className="flex flex-col">
           <p>Pending:</p>
-          <p className="font-[500] text-neutral-900">{balance ? formatNumber(amount - Number(balance), true) : "--"}</p>
+          <p className="font-[500] text-neutral-900">{formatNumber(pending ?? 0)?? "--"}</p>
         </div>
         <div className="flex flex-col">
           <p>Insallments:</p>

@@ -138,6 +138,11 @@ export type Admin = {
     last_payment_date: string;
     next_payment_date: string;
     reg_date: string; //
+    paid?: number; 
+    pending?: number; 
+    per_installment?: number;
+    createdAt: string;
+    updatedAt: string;
   }
 
   export type PaymentPlanDetailed = Omit<PaymentPlan, 'course_id'> & {

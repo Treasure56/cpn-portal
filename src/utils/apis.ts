@@ -65,5 +65,6 @@ export const apis = {
     uploadCert: (id: string) => `${HOST}/manager/staff/${id}/upload-certificate`,
     deleteCert: (staffId: string, certId:string) => `${HOST}/manager/staff/${staffId}/certificate/${certId}`,
     editPayment: (id:string) => `${HOST}/manager/student/payment/${id}`,
+    getPaymentPlan: (id:string) => `${HOST}/manager/student/plan/${id}`,
   },
 };

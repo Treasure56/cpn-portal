@@ -2,7 +2,7 @@ git add .
 
 ECHO "________________Added________________"
 
-git commit -m " fixed manager filters and search"
+git commit -m " fixed payment planning issue"
 
 ECHO "________________Committed________________"
 
