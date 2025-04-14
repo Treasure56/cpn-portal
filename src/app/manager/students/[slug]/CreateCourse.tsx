@@ -76,8 +76,8 @@ const fields: AppInputProps[] = [
   },
   {
     name: "reg_date",
-    title: "Registration Date",
-    placeholder: "Enter Registration Date",
+    title: "Enrollment Date",
+    placeholder: "Enter Enrollment Date",
     type: "date",
   },
 ];

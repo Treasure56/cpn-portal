@@ -13,7 +13,7 @@ export default function Courses(student: Students) {
                 <h3 className=" text-lg font-[500]">Courses</h3>
           <CreateCourse studentId={_id}>
           <button className="btn-dark !py-1.5 !px-5 !font-normal !text-sm w-fit flex justify-end">
-            Add Course +
+            Add Enrollment +
           </button>
           </CreateCourse>
             </div>
