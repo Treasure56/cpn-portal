@@ -1,15 +1,24 @@
 import { PageTitle } from "@/components/admin";
-import AdminTotalStaff from "./AdminTotalStaff";
-import AdminTotalManagers from "./AdminTotalManagers";
-import AdminTotalStudents from "./AdminTotalStudents";
+import CenterSelect from "@/components/admin/CenterSelect";
+import DatePicker from "@/components/admin/DatePicker";
 import AdminTotalCourses from "./AdminTotalCourses";
-import Table from "./Table";
+import AdminTotalManagers from "./AdminTotalManagers";
+import AdminTotalStaff from "./AdminTotalStaff";
+import AdminTotalStudents from "./AdminTotalStudents";
 import CreateCenter from "./CreateCenter";
+import Table from "./Table";
 
 export default function Page() {
     return (
         <section className="flex flex-col gap-4">
-            <PageTitle>Admin</PageTitle>
+            <div className="flex justify-between">
+                <PageTitle>Admin</PageTitle>
+               <div className="flex gap-2">
+                 <DatePicker />
+                 <CenterSelect />
+
+               </div>
+            </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <AdminTotalManagers />

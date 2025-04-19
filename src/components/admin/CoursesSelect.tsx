@@ -1,3 +1,4 @@
+"use client"
 import { withAll } from "@/functions/helpers";
 import { useChangeSearchParams } from "@/hooks";
 import { useCourses } from "@/hooks/useCourses";

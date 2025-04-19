@@ -38,6 +38,7 @@ export const apis = {
     getSingleStaff: (id: string) => `${HOST}/admin/staff/${id}`,
     deletePayment: (id:string) => `${HOST}/admin/student/payment/${id}`,
     getPaymentPlan: (id:string) => `${HOST}/admin/student/plan/${id}`,
+    adminReport: `${HOST}/admin/report`,
   },
 
   manager: {
