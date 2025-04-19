@@ -1,3 +1,4 @@
+"use client"
 import { withAll } from "@/functions/helpers";
 import { AppSelect } from "../form";
 import { useCenters, useChangeSearchParams } from "@/hooks";

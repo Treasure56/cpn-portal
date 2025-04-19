@@ -6,6 +6,6 @@ git commit -m " fixed payment planning issue"
 
 ECHO "________________Committed________________"
 
-git push origin2 main
+git push origin main
 
 ECHO "________________Pushed________________"   
