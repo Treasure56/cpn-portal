@@ -7,19 +7,12 @@ import AdminTotalStaff from "./AdminTotalStaff";
 import AdminTotalStudents from "./AdminTotalStudents";
 import CreateCenter from "./CreateCenter";
 import Table from "./Table";
+import SelectReportType from "@/components/admin/SelectReportType";
 
 export default function Page() {
     return (
         <section className="flex flex-col gap-4">
-            <div className="flex justify-between">
                 <PageTitle>Admin</PageTitle>
-               <div className="flex gap-2">
-                 <DatePicker />
-                 <CenterSelect />
-
-               </div>
-            </div>
-
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <AdminTotalManagers />
                 <AdminTotalStaff />

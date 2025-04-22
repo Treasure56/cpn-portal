@@ -1,7 +1,7 @@
 export type AdminOverViewCardProps = {
     title: string,
     icon: React.ReactNode,
-    count: number,
+    count: number | string,
     color: string
 }
 export default function AdminOverViewCard({title, icon, count, color}: AdminOverViewCardProps) {

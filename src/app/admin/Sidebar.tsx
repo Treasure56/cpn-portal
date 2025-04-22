@@ -108,7 +108,7 @@ const links: SidebarLinkProps[] = [
   {
     title: "Report",
     icon: <MdOutlineReportGmailerrorred />,
-    href: paths.managerReport,
+    href: paths.adminReport,
   },
   // {
   //     title: "Invoices",

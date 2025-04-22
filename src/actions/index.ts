@@ -1,5 +1,4 @@
-import { createManager } from './admin/createManager'
-import { fetchCourses } from './fetch/fetchCourse'
+
 
 export {adminRegister} from './auth/adminRegister'
 export {login} from './auth/login'

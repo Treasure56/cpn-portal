@@ -20,6 +20,7 @@ export const paths = {
     adminChangePassword: "/admin/change-password",
     adminInvoice: (id:string)=>`/admin/invoices/${id}`,
     adminSingleStaff: (id:string)=>`/admin/staff/${id}`,
+    adminReport: "/admin/report",
 
 
     //manager pages

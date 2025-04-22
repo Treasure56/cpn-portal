@@ -1,13 +1,11 @@
 "use client"
 
-import { editManager } from "@/actions";
 import { editCourse } from "@/actions/admin/editCourse";
-import { AppSelect, FormButton, FormMessage } from "@/components/form";
+import { FormButton, FormMessage } from "@/components/form";
 import AppInput, { AppInputProps } from "@/components/form/AppInput";
-import { useChangeSearchParams } from "@/hooks";
-import { Courses, Manager, Staff, Students } from "@/types";
+import { Courses } from "@/types";
 import { AlertDialog } from "@radix-ui/themes";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { IoClose } from "react-icons/io5";
 

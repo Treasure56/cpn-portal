@@ -9,4 +9,5 @@ export const tags ={
     invoice: 'invoice',
     payment: 'payment',
     balance: 'balance',
+    report: 'report'
 }

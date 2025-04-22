@@ -1,6 +1,5 @@
 import { ErrorBoundary } from "react-error-boundary";
 import TableRow from "./TableRow";
-import { adminFetchSingleStudentPayment } from "@/actions";
 import { StaffDetailed } from "@/types";
 
 export default async function Table({
