@@ -1,13 +1,10 @@
 import { PageTitle } from "@/components/admin";
-import CenterSelect from "@/components/admin/CenterSelect";
-import DatePicker from "@/components/admin/DatePicker";
 import AdminTotalCourses from "./AdminTotalCourses";
 import AdminTotalManagers from "./AdminTotalManagers";
 import AdminTotalStaff from "./AdminTotalStaff";
 import AdminTotalStudents from "./AdminTotalStudents";
 import CreateCenter from "./CreateCenter";
 import Table from "./Table";
-import SelectReportType from "@/components/admin/SelectReportType";
 
 export default function Page() {
     return (

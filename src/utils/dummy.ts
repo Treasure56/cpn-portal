@@ -83,6 +83,7 @@ export const plansDummy:PaymentPlan = {
     user_id: "1234567",
     createdAt: "2022-01-01T00:00:00.000Z",
     updatedAt: "2022-01-01T00:00:00.000Z",
+    summary:"bbdbdbd"
   };
 
 export const plansDummys = [plansDummy, plansDummy];

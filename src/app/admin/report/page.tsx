@@ -1,12 +1,18 @@
 import { fetchReport } from "@/actions/fetch/fetchReport";
 import { PageTitle } from "@/components/admin";
 import AdminOverViewCard from "@/components/admin/AdminOverViewCard";
-import DatePicker from "@/components/admin/DatePicker";
+import CenterSelect from "@/components/admin/CenterSelect";
+import CoursesSelect from "@/components/admin/CoursesSelect";
+import { DatePicker } from "@/components/admin/DatePicker";
+import StatusSelect from "@/components/admin/StatusSelect";
+import { AppPageProps } from "@/types/basicTypes";
+import { Suspense } from "react";
 import { FaMoneyBill } from "react-icons/fa6";
+import { DownloadReport } from "./DownloadReport";
 import Table from "./Table";
 
-export default async function Page() {
-  const reports = await fetchReport();
+export default async function Page({ searchParams }: AppPageProps) {
+  const reports = await fetchReport(searchParams);
   if (!reports || reports == "error")
     return <div className="info">error fetching reports</div>;
   return (
@@ -14,9 +20,17 @@ export default async function Page() {
       <div className="flex justify-between">
         <PageTitle>Report</PageTitle>
         <div className="flex gap-2">
-          <DatePicker />
-          {/* <CenterSelect />
-          <SelectReportType /> */}
+          <Suspense>
+            <div className="w-40 flex-shrink-0">
+              <CoursesSelect />
+            </div>
+            <StatusSelect />
+            <DatePicker />
+            <div className="w-40 flex-shrink-0">
+              <CenterSelect />
+            </div>
+            <DownloadReport />
+          </Suspense>
         </div>
       </div>
 
@@ -45,7 +59,7 @@ export default async function Page() {
           count={reports.data.summary.TotalCompletedAmount}
           icon={<FaMoneyBill />}
         />
-         <AdminOverViewCard
+        <AdminOverViewCard
           title="Total Pending Amount"
           color="#111"
           count={reports.data.summary.TotalPendingAmount}
@@ -54,8 +68,7 @@ export default async function Page() {
       </div>
 
       <div className="flex mt-5 flex-col">
-       
-        <Table />
+        <Table report={reports} />
       </div>
     </section>
   );
