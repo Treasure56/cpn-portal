@@ -36,7 +36,7 @@ export default async function Page({ searchParams }: AppPageProps) {
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <AdminOverViewCard
-          title="Total Payment Plans"
+          title="Total Enrollments"
           color="#111"
           count={reports.data.summary.totalPaymentPlans}
           icon={<FaMoneyBill />}
@@ -51,6 +51,12 @@ export default async function Page({ searchParams }: AppPageProps) {
           title="Total pending Payments"
           color="#111"
           count={reports.data.summary.pendingCount}
+          icon={<FaMoneyBill />}
+        />
+        <AdminOverViewCard
+          title="Total Paid Ammount"
+          color="#111"
+          count={reports.data.summary.TotalPaidAmount}
           icon={<FaMoneyBill />}
         />
         <AdminOverViewCard

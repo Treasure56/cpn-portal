@@ -163,6 +163,7 @@ export type ReportSummary = {
   pendingCount: number;
   TotalCompletedAmount: string;
   TotalPendingAmount: string;
+  TotalPaidAmount: string;
 };
 export type Report = {
   data: {
