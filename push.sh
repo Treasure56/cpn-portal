@@ -6,6 +6,6 @@ git commit -m "Designed and inergrated report api"
 
 ECHO "________________Committed________________"
 
-git push origin main
+git push origin2 main
 
 ECHO "________________Pushed________________"   
