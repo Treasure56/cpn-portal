@@ -7,7 +7,7 @@ export function AppLogo({toWebsite = false}:{toWebsite?:boolean}) {
   return (
     <Link href={toWebsite ? HOST : paths.home}>
       <div className="flex gap-1 items-center origin-left max-sm:scale-95">
-        <img
+        {/* <img
           src="/images/cpn-logo.png"
           alt="cpn Logo"
           className="w-14 max-w-full"
@@ -16,7 +16,12 @@ export function AppLogo({toWebsite = false}:{toWebsite?:boolean}) {
           Center <br />
           Point <br />
           Network
-        </h2>
+        </h2> */}
+         <img
+          src="/images/terminal.png"
+          alt="cpms Logo"
+          className="w-24 max-w-full"
+        />
         
       </div>
     </Link>

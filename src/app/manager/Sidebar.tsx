@@ -93,21 +93,21 @@ const links: SidebarLinkProps[] = [
   //     icon: <FaBookOpen />,
   //     href: paths.man,
   // },
-  {
-    title: "Payments",
-    icon: <FaMoneyBill />,
-    href: paths.managerPayments,
-  },
+  // {
+  //   title: "Payments",
+  //   icon: <FaMoneyBill />,
+  //   href: paths.managerPayments,
+  // },
   {
     title: "Invoices",
     icon: <PiInvoiceFill />,
     href: paths.managerInvoices,
   },
-  {
-    title: "Report",
-    icon: <MdOutlineReportGmailerrorred />,
-    href: paths.managerReport,
-  },
+  // {
+  //   title: "Report",
+  //   icon: <MdOutlineReportGmailerrorred />,
+  //   href: paths.managerReport,
+  // },
   {
     title: "Settings",
     icon: <IoSettingsOutline />,

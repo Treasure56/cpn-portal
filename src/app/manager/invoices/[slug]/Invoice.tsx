@@ -1,8 +1,6 @@
-import { PageTitle } from "@/components/admin";
 import { AppLogo } from "@/components/navbar";
 import PdfScript from "@/components/PdfScript";
 import { formatDate, formatNumber } from "@/functions/helpers";
-import { centerDummy, courseDummy, studentDummy } from "@/utils/dummy";
 import { InvoiceDetailedlus } from "@/types";
 
 export default async function InvoicePdf({

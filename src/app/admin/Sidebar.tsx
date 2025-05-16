@@ -100,11 +100,11 @@ const links: SidebarLinkProps[] = [
     href: paths.adminCourses,
   },
 
-  {
-    title: "Payments",
-    icon: <FaMoneyBill />,
-    href: paths.adminPayments,
-  },
+  // {
+  //   title: "Payments",
+  //   icon: <FaMoneyBill />,
+  //   href: paths.adminPayments,
+  // },
   {
     title: "Report",
     icon: <MdOutlineReportGmailerrorred />,
