@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/popover";
 import { useMemo, useState } from "react";
 import { useChangeSearchParams } from "@/hooks";
+import { PopoverClose } from "@radix-ui/react-popover";
 
 export function DatePicker({
   className,
@@ -73,7 +74,7 @@ export function DatePicker({
             numberOfMonths={2}
           />
          <div className="flex justify-between items-center">
-           <button
+           <PopoverClose
             onClick={() => {
               if (!date || !date.from || !date.to) return;
               const formatedFrom = format(date.from, "yyyy-MM-dd");
@@ -83,8 +84,8 @@ export function DatePicker({
             className="btn-primary !mx-4 mb-2 !px-6"
           >
             apply
-          </button>
-          <button
+          </PopoverClose>
+          <PopoverClose
             onClick={() => {
               
               pushParams({ from:"", to:"" });
@@ -92,7 +93,7 @@ export function DatePicker({
             className="btn-dark !mx-4 mb-2 !px-6"
           >
             Reset
-          </button>
+          </PopoverClose>
          </div>
         </PopoverContent>
       </Popover>
