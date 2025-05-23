@@ -21,6 +21,7 @@ export const paths = {
     adminInvoice: (id:string)=>`/admin/invoices/${id}`,
     adminSingleStaff: (id:string)=>`/admin/staff/${id}`,
     adminReport: "/admin/report",
+    adminSingleManager: (id:string)=>`/admin/managers/${id}`,
 
 
     //manager pages

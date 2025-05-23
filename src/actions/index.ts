@@ -23,7 +23,9 @@ export {adminFetchSingleStudentPayment} from './fetch/adminSingleStudentpayment'
 export {adminFetchSingleStaff} from './fetch/adminFetchSingleStaff'
 export {deleteCertificate} from './manager/deleCertificate'
 export {deletePayment} from './admin/deletePayment'
-
+export {adminFetchSigleManager} from './fetch/adminFetchSigleManager'
+export {uploadManagerProfile} from './admin/uploadManagerProfile'
+export {deleteManagerCert} from './admin/adminDeleteCertificate'
 
 
 

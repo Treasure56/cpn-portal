@@ -27,14 +27,14 @@ export default function TableRow({
       </td>
       <td>{email}</td>
       <td>{phone}</td>
-      <td>{formatNumber(salary, true)}</td>
-      <td>
+      {/* <td>{formatNumber(salary, true)}</td> */}
+      {/* <td>
         <div className="flex flex-wrap gap-2">
           {courses.map((item) => (
             <p key={item._id}>{item.title}</p>
           ))}
         </div>
-      </td>
+      </td> */}
       <td>
         <div className="flex gap-2 justify-end">
           <EditManager

@@ -1,22 +1,23 @@
-import { Staff } from "@/types";
+import { Manager, Staff, Students } from "@/types";
 import { Avatar } from "@radix-ui/themes";
-import { FaEnvelope, FaPhone } from "react-icons/fa6";
+import { FaCalendar, FaEnvelope, FaPhone } from "react-icons/fa6";
+import ProfileModal from "./profileModal";
 
-export default function Profile(staff: Staff) {
+export default function Profile(manager: Manager) {
     const {
         _id,
-        fullname: full_name,
+        fullname,
         email,
         phone,
-      } = staff;
-  const initials = full_name
-    .toUpperCase()
+      } = manager;
+  const initials = manager?.fullname?.toUpperCase()
     .split(" ")
     .map((v, i) => v[0])
     .join("");
 
   return (
     <div className=" flex gap-4 items-center">
+      <ProfileModal manager={manager}>
         <button>
           <Avatar
             variant="solid"
@@ -24,11 +25,12 @@ export default function Profile(staff: Staff) {
             fallback={initials}
             size="7"
             radius="full"
-            src={staff.image}
+            src={manager.image}
           />
         </button>
+      </ProfileModal>
       <div className="flex flex-col gap-1">
-        <h2 className="heading">{full_name}</h2>
+        <h2 className="heading">{fullname}</h2>
         <div className="flex flex-wrap gap-4">
           <p className="text-sm text-neutral-500 bg-neutral-100 rounded-lg p-2 inline-flex gap-1 items-center">
             <FaEnvelope /> {email}

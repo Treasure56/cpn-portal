@@ -5,22 +5,20 @@ import { apis, tags } from "@/utils";
 import { ServerRequest } from "@/utils/serverRequest";
 import { revalidateTag } from "next/cache";
 
-export async function uploadProfile(
+export async function adminUploadCert(
   _: ActionResponse,
   formData: FormData
 ): Promise<ActionResponse> {
   try {
-    const staffId = formData.get("staffId") as string;
+    const managerId = formData.get("managerId") as string;
     const req = await ServerRequest.postFile(
-      apis.manager.uploadProfile(staffId),
+      apis.admin.uploadManagerCert(managerId),
       formData
     );
-
     const res: ApiResponse = await req?.json();
-    console.log(4);
     if (res.status == 200) {
-      revalidateTag(tags.staff);
-      return { success: "Image uploaded" };
+      revalidateTag(tags.manager);
+      return { success: "Certificate uploaded" };
     } else {
       return { error: res.data };
     }

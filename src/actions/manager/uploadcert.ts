@@ -10,21 +10,11 @@ export async function uploadCert(
   formData: FormData
 ): Promise<ActionResponse> {
   try {
-    // console.log(data);
-    // console.log(1);
     const staffId = formData.get("staffId") as string;
-    // console.log(2);
     const req = await ServerRequest.postFile(
       apis.manager.uploadCert(staffId),
       formData
-      // {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // }
     );
-    // console.log(3);
-    // console.log(await req?.text());
     const res: ApiResponse = await req?.json();
     // console.log(4);
     if (res.status == 200) {

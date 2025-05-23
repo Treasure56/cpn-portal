@@ -2,7 +2,7 @@ git add .
 
 ECHO "________________Added________________"
 
-git commit -m "Changed the logo to tecterminal logo and updated manager and admin dashboard"
+git commit -m "added: manager Single page and updated admin overview and manager"
 
 ECHO "________________Committed________________"
 

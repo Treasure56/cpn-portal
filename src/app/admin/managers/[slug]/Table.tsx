@@ -1,19 +1,25 @@
+import { ManagerDetailed } from "@/types";
 import { ErrorBoundary } from "react-error-boundary";
 import TableRow from "./TableRow";
-import { StaffDetailed } from "@/types";
+import UploadCert from "./Uploadcert";
 
 export default async function Table({
   query,
-  staff,
+  manager: manager,
 }: {
   query: string;
-  staff: StaffDetailed;
+  manager: ManagerDetailed;
 }) {
-  if (!staff.certificate) return null;
+  if (!manager.certificate) return null;
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between">
         <h3 className=" text-lg font-[500]">Certificates</h3>
+        <UploadCert>
+          <button className="btn-dark !py-1.5 !px-5 !font-normal !text-sm w-fit flex justify-end">
+            Add Certificate +
+          </button>
+        </UploadCert>
       </div>
 
       <table className="min-w-[900px] w-full rounded-md overflow-hidden app-table">
@@ -21,8 +27,9 @@ export default async function Table({
           <tr className="bg-dark text-neutral-background font-semibold rounded-md text-base rounded-br-md rounded-bl-md">
             <td>Title</td>
             <td>open</td>
+            <td></td>
           </tr>
-          {staff.certificate.map((v, i) => (
+          {manager.certificate.map((v, i) => (
             <ErrorBoundary
               key={i}
               fallback={

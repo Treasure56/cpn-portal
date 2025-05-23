@@ -14,6 +14,17 @@ export type Manager = {
   phone: string;
   password: string;
   center: Centers;
+  image?: string;
+};
+export type ManagerCertificate = {
+  name: string;
+  url: string;
+  _id: string;
+}
+
+export type ManagerDetailed = Manager & {
+  center: Centers;
+  certificate?: ManagerCertificate[];
 };
 
 export type Staff = {
@@ -23,7 +34,7 @@ export type Staff = {
   email: string;
   phone: string;
   center: string;
-  salary: number;
+  salary?: number;
   courses: Courses[];
   image?: string;
 };

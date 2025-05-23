@@ -1,9 +1,8 @@
+import Table from "@/app/manager/staff/Table";
 import { PageTitle } from "@/components/admin";
-import ManagerTotalStudents from "./ManagerTotalStudents";
-import CreateCenter from "./CreateCenter";
 import ManagerTotalCourses from "./ManagerTotalCourses";
 import ManagerTotalStaff from "./ManagerTotalStaff";
-import Table from "@/app/manager/staff/Table";
+import ManagerTotalStudents from "./ManagerTotalStudents";
 
 export default function Page() {
     return (

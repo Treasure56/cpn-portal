@@ -18,8 +18,8 @@ export default async function Table({query}:{query: string}) {
               <td>Email</td>
               <td>Phone</td>
               <td>Center</td>
-              <td>Salary</td>
-              <td>Courses</td>
+              {/* <td>Salary</td> */}
+              {/* <td>Courses</td> */}
               <td></td>
               
               {/* <td></td> */}

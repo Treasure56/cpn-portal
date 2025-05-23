@@ -39,6 +39,10 @@ export const apis = {
     deletePayment: (id:string) => `${HOST}/admin/student/payment/${id}`,
     getPaymentPlan: (id:string) => `${HOST}/admin/student/plan/${id}`,
     adminReport: `${HOST}/admin/report`,
+    fetchSingleManager: (id: string) => `${HOST}/admin/managers/${id}`,
+    uploadManagerCert: (id: string) => `${HOST}/admin/manager/${id}/upload-certificate`,
+    uploadManagerProfile: (id: string) => `${HOST}/admin/manager/${id}/upload-image`,
+    deleteManagerCert: (managerId: string, certId:string) => `${HOST}/admin/manager/${managerId}/certificate/${certId}`,
   },
 
   manager: {

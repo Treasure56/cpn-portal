@@ -15,8 +15,8 @@ export default async function Table({query}:{query: string}) {
               <td className="py-2 ">Name</td>
               <td>Email</td>
               <td>Phone</td>
-              <td>Salary</td>
-              <td>Courses</td>
+              {/* <td>Salary</td> */}
+              {/* <td>Courses</td> */}
               <td></td>
               
               {/* <td></td> */}

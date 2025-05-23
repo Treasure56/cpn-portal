@@ -19,12 +19,12 @@ export default function TableRow({_id, email, center, fullname: full_name, phone
       </td>
       <td>{phone}</td>
       <td>{center.name}</td>
-      <td>{formatNumber(salary, true)}</td>
-      <td>{courses.map(i => i.title).join(", ")}</td>
-      <td><div className="flex gap-2 justify-end">
+      {/* <td>{formatNumber(salary, true)}</td> */}
+      {/* <td>{courses.map(i => i.title).join(", ")}</td> */}
+      {/* <td><div className="flex gap-2 justify-end"> */}
         {/* <EditManager staff={{_id, email, center: center, fullname: full_name, phone, courses, salary, ...props }}><button className="btn-edit"><FaEdit /></button></EditManager> */}
         {/* <DeleteManager staff={{_id, email, center: center, fullname: full_name, phone, courses, salary, ...props }}><button className="btn-delete"><RiDeleteBinLine /></button></DeleteManager> */}
-      </div></td>      
+      {/* </div></td>       */}
     </tr>
   );
 }
